@@ -7,4 +7,4 @@ test:
                 - echo 'La commande qui suit est l mal'
                 - cp config/config.js.example config/config.js
                 - nodejs -v
-                - modejs server.js
+                - nodejs server.js
