@@ -1,6 +1,10 @@
 before_script:
         - npm install express
-        - npm install ejs 
+        - npm install ejs
+        - npm install colors 
 test:
         script:
+                - echo 'La commande qui suit est l mal'
+                - cp config/config.js.example config/config.js
                 - nodejs -v
+                - modejs server.js

@@ -1,0 +1,15 @@
+config = {};
+
+var rootFolder = process.env.PWD;
+
+config.wwwFolder    = rootFolder + '/www';
+config.picsFolder   = rootFolder + '/www/pics';
+config.cssFolder    = rootFolder + '/www/styles';
+config.scriptFolder = rootFolder + 'www/script';
+
+config.listenPort = 8081;
+config.listenInterface = '0.0.0.0';
+
+module.exports = config;
+
+//TODO : convert to json file?
