@@ -1,0 +1,6 @@
+before_script:
+        - npm install express
+        - npm install ejs 
+test:
+        script:
+                - nodejs -v
