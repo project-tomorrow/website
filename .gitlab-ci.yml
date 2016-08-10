@@ -2,10 +2,8 @@ before_script:
         - npm install express
         - npm install ejs
         - npm install colors
-        - whoami
 test:
         script:
-                - killall -qw nodejs
-                - echo 'La commande qui suit est l mal'
+                - echo 'La commande qui suit est l mal et celle d après est pire'
                 - cp config/config.js.example config/config.js
-                - nodejs server.js &
+                - nodejs server.js
