@@ -2,7 +2,6 @@ before_script:
         - npm install express
         - npm install ejs
         - npm install colors
-        - npm install -g supervisor
 test:
         script:
                 - echo 'La commande qui suit est l mal et celle d après est pire'
