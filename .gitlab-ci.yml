@@ -5,4 +5,3 @@ before_script:
 test:
         script:
                 - cp config/config.js.example config/config.js
-                - cp -ru ../Main /home/thibault/web/
