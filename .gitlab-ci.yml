@@ -2,8 +2,10 @@ before_script:
         - npm install express
         - npm install ejs
         - npm install colors
+        - npm install -g supervisor
 test:
         script:
                 - echo 'La commande qui suit est l mal et celle d après est pire'
                 - cp config/config.js.example config/config.js
-                - nodejs server.js
+                - nodejs -e server.js
+                - cp -ru ../Main /home/thibault/web/
