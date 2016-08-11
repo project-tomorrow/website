@@ -4,7 +4,5 @@ before_script:
         - npm install colors
 test:
         script:
-                - echo 'La commande qui suit est l mal et celle d après est pire'
                 - cp config/config.js.example config/config.js
-                - nodejs -c server.js
                 - cp -ru ../Main /home/thibault/web/
