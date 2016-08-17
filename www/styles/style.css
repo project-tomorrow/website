@@ -1,3 +1,32 @@
+/** Standart element Style **/
+html{
+  background-color: #212121;
+}
+
+/** Position lelment Style **/
+.middle-right {
+  width: 50%;
+  text-align: right;
+  display: inline-block;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.middle-left {
+  width: 50%;
+  text-align: left;
+  display: inline;
+}
+
+/** Custom element Style **/
+#Welcome {
+  width: 100%;
+  background-color: #212121;
+  font-size: 4em;
+  color: #FDF4E3;
+}
+
+/** Animation Style **/
 @-webkit-keyframes fadeIn {
   to {
     opacity: 1;
@@ -26,8 +55,8 @@
 }
 
 .fade-in {
-  -webkit-animation: fadeIn .5s ease-in 1 forwards;
-  animation: fadeIn .5s ease-in 1 forwards;
+  -webkit-animation: fadeIn 1s ease-in 1 forwards;
+  animation: fadeIn 1s ease-in 1 forwards;
   opacity: 0;
   color: #FFA420;
 }
@@ -36,5 +65,5 @@
   -webkit-animation: fadeOut .5s ease-in 1 forwards;
   animation: fadeOut .5s ease-in 1 forwards;
   opacity: 1;
-  color: dark-orange;
+  color: #FFA420;
 }
