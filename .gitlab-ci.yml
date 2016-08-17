@@ -2,6 +2,7 @@ before_script:
         - npm install express
         - npm install ejs
         - npm install colors
+        - npm install bunyan
 test:
         script:
                 - cp config/config.js.example config/config.js

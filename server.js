@@ -1,6 +1,13 @@
-var express = require('express');
-var exp = express();
-
+var express = require('express'),
+		exp = express();
+var bunyan = require('bunyan'),
+		log = bunyan.createLogger({
+				name: 'ProTo Server',
+				serializers: {
+					req: bunyan.stdSerializers.req,
+					res: bunyan.stdSerializers.res
+				}
+		});
 var colors = require('colors');
 
 var conf = require('./config/config');
@@ -22,12 +29,13 @@ exp.get('/', function (req, res){
 //redirect erroneous pages to 404
 exp.get('*', function (req, res){
 	res.render('../www/404.ejs');
-	console.log( 'INFO'.yellow + ': Demande d\'accès à page inéxistante par : ' + req.ip);
+	log.warn('Demande d\'accès à page inéxistante (' + req.get('host') + req.originalUrl +
+						') par : ' + req.ip);
 });
 
 //Fonction d'écoute sur conf.listenInterface en conf.listenPort
 exp.listen(conf.listenPort, conf.listenInterface,function(){
-	console.log('INFO'.yellow + ': server running using port : '
-	            + colors.inverse(conf.listenPort) + ' at the interface : '
-							+ colors.inverse(conf.listenInterface));
+	log.info( ': server running using port : '
+	          + colors.inverse(conf.listenPort) + ' at the interface : '
+						+ colors.inverse(conf.listenInterface));
 });
