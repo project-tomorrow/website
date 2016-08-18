@@ -3,21 +3,36 @@
 		<% include partials/head.ejs %>
 		<link rel="icon" type="image/png" href="favicon.ico" sizes="32x32">
 		<title>ProTo - Home</title>
-		<% include script/fadeList.js %>
 	</head>
 <body>
+	<% include partials/navBar.ejs %>
 	<section>
-		<div class="slide" id="Welcome">
+		<div class="slide-content" id="Welcome">
 			<div class="middle-right">Proto</div>
 			<div class="middle-left"><span class="fade-el"> arque</span>
 				 			  								<span class="fade-el">supien</span>
 																<span class="fade-el">ïtien</span>
 				 												<span class="fade-el">zaure</span>
 				 												<span class="fade-el">zoaire</span>
+                                <span class="fade-el">type</span>
+                                <span class="fade-el">sapiens</span>
 			</div>
 		</div>
-	</section>
-	<%// include partials/footer.ejs %> <!-- Soon -->
-</body>
+		<div class="slide-content first">
+			<% include slides/description.ejs %>
+		</div>
+    <div class="scroll-down-button">
+    </div>
 
+		<% include partials/slide-start %>
+			<% include slides/test.ejs %>
+		<% include partials/slide-stop %>
+
+		<% include partials/slide-start %>
+		</div>
+
+	</section>
+	<%# include partials/footer.ejs %>
+</body>
+<% include script/fadeList.js %>
 </html>
