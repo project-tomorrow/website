@@ -7,6 +7,8 @@ config.picsFolder   = rootFolder + '/www/pics';
 config.cssFolder    = rootFolder + '/www/styles';
 config.scriptFolder = rootFolder + '/www/script';
 
+config.mongoDbUrl = 'mongodb://localhost:27017/proto';
+
 config.listenPort = 8084;
 config.listenInterface = '0.0.0.0';
 

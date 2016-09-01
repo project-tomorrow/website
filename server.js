@@ -8,6 +8,9 @@ var bunyan = require('bunyan'),
 					res: bunyan.stdSerializers.res
 				}
 		});
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+
 var colors = require('colors');
 
 var conf = require('./config/config');
@@ -21,9 +24,28 @@ exp.use(express.static(conf.picsFolder));
 //js  integration
 exp.use(express.static(conf.scriptFolder));
 
-//redirect kapupa.fr to wwwFolder/home.html
+//redirect ProTo to wwwFolder/home.html
 exp.get('/', function (req, res){
 	res.render('../www/home.ejs');
+});
+
+//redirect ProTo/member to wwwFolder/people.html
+exp.get('/', function (req, res){
+	res.render('../www/home.ejs');
+});
+
+var showPeople = function(req, res, db, callback){
+	log.info("Connected");
+};
+
+exp.get('/people', function (req, res){
+	MongoClient.connect(config.mongoDbUrl, function(req, res, err, db) {
+  	log.info("Connected correctly to the db.");
+		showPeople(req, res, db, function() {
+			db.close();
+		});
+	});
+	res.render('../www/people.ejs');
 });
 
 //redirect erroneous pages to 404
