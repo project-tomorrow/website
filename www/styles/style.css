@@ -39,6 +39,43 @@ nav {
   margin-top: 200px;
 }
 
+button.left-arrow{
+  opacity: 0.5;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-right: 60px solid black;
+  top:50%;
+  left: 0%;
+  transform: translate(0%,-50%);
+}
+
+button.left-arrow:hover{
+  opacity: 0.3;
+}
+
+button.left-arrow:active{
+    opacity: 0.5;
+    border-right: 60px solid #FFA420;
+}
+
+button.right-arrow{
+  opacity: 0.5;
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  border-left: 60px solid black;
+  top: 50%;
+  right: 0%;
+  transform: translate(0%,-50%);
+}
+
+button.right-arrow:hover{
+  opacity: 0.3;
+}
+
+button.right-arrow:active{
+  opacity: 0.7;
+  border-left: 60px solid #FFA420;
+}
 
  /** Slide Management section**/
 .slide-content {
@@ -109,6 +146,11 @@ nav {
   bottom: -9999px;
   left: -9999px;
   right: -9999px;
+}
+
+.slide-content button {
+  background-color: white;
+  position: absolute;
 }
 
 #HorzTopNav
