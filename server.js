@@ -1,5 +1,6 @@
 var express = require('express'),
 		exp = express();
+var fs = require('fs');
 var bunyan = require('bunyan'),
 		log = bunyan.createLogger({
 				name: 'ProTo Server',
@@ -24,16 +25,28 @@ exp.use(express.static(conf.picsFolder));
 //js  integration
 exp.use(express.static(conf.scriptFolder));
 
+
+//usefull multipurpose function
+function fileListToEjs(dir, callback){
+	fs.readdir(dir, function(err, files) {
+		callback(files);
+	});
+}
 //redirect ProTo to wwwFolder/home.html
 exp.get('/', function (req, res){
-	res.render('../www/home.ejs');
+res.render('../www/home.ejs',
+ 					{ListDiapo : fs.readdirSync("www/diaporama"),
+					 ListSlide : fs.readdirSync("www/slides")});
+
+/* FIXME : can't pass slides arguments
+		var slides = fs.readdirSync("www/slides");
+		fileListToEjs("www/diaporama", function(files,slides){
+				res.render('../www/home.ejs', {ListDiapo : files, ListSlide : slides});
+		});
+*/
 });
 
 //redirect ProTo/member to wwwFolder/people.html
-exp.get('/', function (req, res){
-	res.render('../www/home.ejs');
-});
-
 var showPeople = function(req, res, db, callback){
 	log.info("Connected");
 };

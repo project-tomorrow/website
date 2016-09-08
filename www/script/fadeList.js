@@ -16,13 +16,11 @@
   }
 
   function fadeTab(){
-    i = (i+1)%(fadelist.length);
+    inc = (inc+1)%(fadelist.length);
     fadeIn(fadelist[i]);
   }
 
   var fadelist = document.getElementsByClassName("fade-el");
-  var i = 0;
+  var inc = 0;
   //Calls the init function on pageload.
-  onload=fadeTab;
-
 </script>

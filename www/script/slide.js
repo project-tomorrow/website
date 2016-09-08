@@ -45,6 +45,4 @@
   var tempo = 2000;
   var play;
   //Calls the init function on pageload.
-  onload=SlideStart;
-
 </script>

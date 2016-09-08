@@ -19,27 +19,32 @@
 			</div>
 		</div>
 
-		<!--TODO: automatize intégration-->
-		<div class="slide-content first">
-			<% include slides/description.ejs %>
-		</div>
-		<% include partials/slide-stop %>
-
-		<% include partials/slide-start %>
-		<div class="slide-content diaporama" onmouseover="SlideStop()"
-																				 onfocussout="SlideStart()">
-		<% include slides/diaporama.ejs %>
-		</div>
-		<% include partials/slide-stop %>
-
-		<% include partials/slide-start %>
-		<div class="slide-content">
-		<% include slides/test.ejs %>
-		</div>
+		<% for(var i=0; i<ListSlide.length; i++) {%>
+			<% if(i==0) {%>
+				<div class="slide-content first">
+			<% }else{ %>
+				<div class="scroll-up-button-daddy">
+					<div class="scroll-up-button"></div>
+				</div>
+				<div class="slide-content">
+			<% } %>
+					<%- include('slides/' + ListSlide[i])%>
+				</div>
+			<% if(i==(ListSlide.length-1)) {%>
+				<div class="scroll-down-button"></div>
+			<% } >
+		<% } %>
 
 	</section>
 	<%# include partials/footer.ejs %>
 </body>
-<%# include script/fadeList.js %>
+<script>
+	function start(){
+		SlideStart();
+		fadeTab();
+	}
+	onload=start;
+</script>
+<% include script/fadeList.js %>
 <% include script/slide.js %>
 </html>
