@@ -18,17 +18,21 @@
                                 <span class="fade-el">sapiens</span>
 			</div>
 		</div>
+
+		<!--TODO: automatize intégration-->
 		<div class="slide-content first">
 			<% include slides/description.ejs %>
 		</div>
-    <div class="scroll-down-button">
-    </div>
-
-		<% include partials/slide-start %>
-			<% include slides/diaporama.ejs %>
 		<% include partials/slide-stop %>
 
 		<% include partials/slide-start %>
+		<div class="slide-content diaporama">
+			<% include slides/diaporama.ejs %>
+		</div>
+		<% include partials/slide-stop %>
+
+		<% include partials/slide-start %>
+		<div class="slide-content">
 			<% include slides/test.ejs %>
 		</div>
 

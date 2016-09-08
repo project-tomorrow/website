@@ -216,6 +216,8 @@ nav {
 .diapo {
   width: 100%;
   position: absolute;
+  top: 50%;
+  transform: translate(0%,-50%);
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(.42, 0, .58, 1);
