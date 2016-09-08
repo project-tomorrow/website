@@ -157,7 +157,7 @@ nav {
   max-width: none;
   z-index: -1;
   margin: auto;
-  max-width: 1780px; 
+  max-width: 1780px;
 }
 
 .slide-content h1 {
@@ -207,6 +207,32 @@ nav {
 
 
 /** Animation Style **/
+
+/*slide stuff*/
+.diaporama{
+  overflow-x: hidden;
+}
+
+.diapo {
+  width: 100%;
+  position: absolute;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(.42, 0, .58, 1);
+}
+.diapo.right{
+    right: -9999px;
+}
+
+.diapo.left{
+  right: 9999px;
+}
+
+.diapo.in {
+  right: 0px;
+}
+
+/*fade stuff*/
 @-webkit-keyframes fadeIn {
   to {
     opacity: 1;

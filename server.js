@@ -45,7 +45,7 @@ exp.get('/people', function (req, res){
 			db.close();
 		});
 	});
-	res.render('../www/people.ejs');
+
 });
 
 //redirect erroneous pages to 404
