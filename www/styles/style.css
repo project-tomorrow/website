@@ -39,6 +39,11 @@ nav {
   margin-top: 200px;
 }
 
+.slide-content button {
+  background-color: white;
+  position: absolute;
+}
+
 button.left-arrow{
   opacity: 0.5;
   border-top: 60px solid transparent;
@@ -75,6 +80,39 @@ button.right-arrow:hover{
 button.right-arrow:active{
   opacity: 0.7;
   border-left: 60px solid #FFA420;
+}
+
+#scroll-bar-diapo{
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%,0%);
+}
+
+#scroll-bar-diapo button.round{
+  position: relative;
+  padding: 0;
+  border-radius: 15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: black;
+  width: 0px;
+  height: 0px;
+  margin: 10px;
+  opacity: 0.3;
+}
+
+#scroll-bar-diapo button.selected{
+  opacity: 0.7;
+}
+
+#scroll-bar-diapo button.round:hover{
+  opacity: 0.7;
+  border-color: #FFA420;
+}
+
+#scroll-bar-diapo button.round:active{
+  opacity: 0.7;
 }
 
  /** Slide Management section**/
@@ -146,11 +184,6 @@ button.right-arrow:active{
   bottom: -9999px;
   left: -9999px;
   right: -9999px;
-}
-
-.slide-content button {
-  background-color: white;
-  position: absolute;
 }
 
 #HorzTopNav

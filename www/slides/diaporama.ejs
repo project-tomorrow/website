@@ -10,3 +10,8 @@
 </div>
 <button class="right-arrow" onclick="NextSlide()"></button>
 <button class="left-arrow" onclick="PreviousSlide()"></button>
+<div id="scroll-bar-diapo">
+  <% for(var i=0; i<3; i++) {%>
+   <button onclick="GoToSlide(<%= i %>)" class="round"></button>
+  <% } %>
+</div>

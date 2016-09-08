@@ -26,14 +26,15 @@
 		<% include partials/slide-stop %>
 
 		<% include partials/slide-start %>
-		<div class="slide-content diaporama" onmouseover="SlideStop()">
-			<% include slides/diaporama.ejs %>
+		<div class="slide-content diaporama" onmouseover="SlideStop()"
+																				 onfocussout="SlideStart()">
+		<% include slides/diaporama.ejs %>
 		</div>
 		<% include partials/slide-stop %>
 
 		<% include partials/slide-start %>
 		<div class="slide-content">
-			<% include slides/test.ejs %>
+		<% include slides/test.ejs %>
 		</div>
 
 	</section>

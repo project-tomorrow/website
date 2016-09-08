@@ -6,6 +6,8 @@
     if(el1.classList.contains("right")) el1.className = "diapo left";
     else if(el1.classList.contains("left")) el1.className = "diapo right";
     el2.classList.add("in");
+    Buttonlist[i].className = "round";
+    Buttonlist[num].classList.add("selected");
     i=num;
   }
 
@@ -31,12 +33,14 @@
 
   function SlideStart(){
     Sladelist[0].classList.add("in");
+    Buttonlist[0].classList.add("selected");
     window.setTimeout(function(){
       play = window.setInterval(SlidePlay,tempo);
-    },2*tempo);
+    },tempo);
   }
 
   var Sladelist = document.getElementsByClassName("diapo");
+  var Buttonlist = document.getElementById("scroll-bar-diapo").getElementsByClassName("round");
   var i = 0;
   var tempo = 2000;
   var play;
