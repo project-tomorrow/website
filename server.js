@@ -9,7 +9,7 @@ var bunyan = require('bunyan'),
 					res: bunyan.stdSerializers.res
 				}
 		});
-var MongoClient = require('mongodb').MongoClient;
+//var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 
 var colors = require('colors');
@@ -51,7 +51,8 @@ var showPeople = function(req, res, db, callback){
 	log.info("Connected");
 };
 
-exp.get('/people', function (req, res){
+/**People page**/
+/*exp.get('/people', function (req, res){
 	MongoClient.connect(config.mongoDbUrl, function(req, res, err, db) {
   	log.info("Connected correctly to the db.");
 		showPeople(req, res, db, function() {
@@ -59,7 +60,7 @@ exp.get('/people', function (req, res){
 		});
 	});
 
-});
+});*/
 
 //redirect erroneous pages to 404
 exp.get('*', function (req, res){
