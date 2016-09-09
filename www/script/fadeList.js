@@ -17,7 +17,7 @@
 
   function fadeTab(){
     inc = (inc+1)%(fadelist.length);
-    fadeIn(fadelist[i]);
+    fadeIn(fadelist[inc]);
   }
 
   var fadelist = document.getElementsByClassName("fade-el");
