@@ -30,13 +30,12 @@
 			<% } %>
 					<%- include('slides/' + ListSlide[i])%>
 				</div>
-			<% if(i==(ListSlide.length-1)) {%>
+			<% if(i!=(ListSlide.length-1)) {%>
 				<div class="scroll-down-button"></div>
 			<% } %>
 		<% } %>
-
 	</section>
-	<%# include partials/footer.ejs %>
+	<% include partials/footer.ejs %>
 </body>
 <script>
 	function start(){

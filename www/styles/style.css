@@ -9,6 +9,12 @@ section {
   text-align: center;
 }
 
+footer {
+/*  bottom: 0;*/
+  background-color: black;
+  color: white;
+}
+
 nav {
   z-index: 100;
 }
@@ -115,6 +121,17 @@ button.right-arrow:active{
   opacity: 0.7;
 }
 
+#legal{
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  vertical-align: middle;
+}
+#legal p{
+  margin: 0px;
+}
+
  /** Slide Management section**/
 .slide-content {
   background-color: white;
@@ -188,32 +205,34 @@ button.right-arrow:active{
 
 #HorzTopNav
 {
-  position:fixed;
-  top: 0;
   color: #303030;;
   font-family:Arial, Helvetica, sans-serif;
-  text-align: center;
+  text-align: right;
   background-color: white ;
   width: 100%;
-  min-height:50px;
+  height:40px;
   padding: 0px 0px 0px 0px;
   margin: 0px 0px 0px 0px;
   box-shadow:  0px 5px 5px 0px #303030 ;
 }
-#HorzTopNav ul
+
+webSiteNav{
+  height: 100%
+}
+nav ul
 {
   list-style-type: none;
   margin: 0px 0px 0px 0px;
 }
 
-#HorzTopNav li
+nav li
 {
   display: inline-block;
   text-align: center;
   text-decoration: none;
 }
 
-#HorzTopNav li a
+nav li a
 {
   font-size: 1.3em;
   position: relative;
@@ -244,42 +263,154 @@ button.right-arrow:active{
   font-size: 1.5em;
 }
 
+.nav-icon {
+  width: 46px;
+  height: 46px;
+}
+
 #IconShortcut li a div {
   width: 46px;
   height: 46px;
 }
 
 #home {
-  background-image: url(/pics/home-black.png);
+  background-image: url(/pics/home.png);
   display: inline-block;
   background-repeat:no-repeat;
   background-size: contain;
   vertical-align: bottom;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
 }
 #home:hover {
-  background-image: url(/pics/home-orange.png);
+  background-image: url(/pics/home-hover.png);
+}
+#office {
+  background-image: url(/pics/office.png);
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+}
+li:hover #office {
+  background-image: url(/pics/office-hover.png);
 }
 #slack {
-  background-image: url(/pics/slack-black.png);
+  background-image: url(/pics/slack.png);
   display: inline-block;
   background-repeat:no-repeat;
   background-size: contain;
   vertical-align: bottom;
 }
-#slack:hover {
-  background-image: url(/pics/slack-orange.png);
+li:hover #slack{
+  background-image: url(/pics/slack-hover.png);
 }
 #gitlab {
-  background-image: url(/pics/git-black.png);
+  background-image: url(/pics/gitlab.png);
   display: inline-block;
   background-repeat:no-repeat;
   background-size: contain;
   vertical-align: bottom;
 }
-#gitlab:hover {
-  background-image: url(/pics/git-orange.png);
+li:hover #gitlab {
+  background-image: url(/pics/gitlab-hover.png);
 }
 
+#websiteNav{
+  margin-right: 100px;
+}
+
+#websiteNav li{
+  margin-top: 5px;
+  padding: 10px 5px 0px 5px;
+}
+
+#contact:hover{
+  margin-top: 0px;
+  border-top: 5px solid #e25b49;
+  vertical-align: bottom;
+}
+
+#contact:active{
+  color: white;
+  background-color: #e25b49;
+}
+
+#Menu {
+  position:fixed;
+  top: 0;
+  right: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  background-image: url(/pics/burger-menu.png);
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
+}
+
+#Menu:hover {
+  background-image: url(/pics/burger-menu-hover.png);
+  opacity: 0.9;
+  border-radius: 0px;
+}
+
+#Menu ul{
+  position: fixed;
+  top : 46px;
+  right: 10px;
+  padding: 10px 0px 10px 0px;
+  display: none;
+  background-color: white;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
+}
+
+#Menu:hover ul{
+  display: block;
+}
+
+#Menu li{
+  display: block;
+  margin-bottom: 0px;
+  padding: 3px;
+}
+#Menu li:hover{
+  color: white;
+  padding: 3px;
+  opacity: 0.9;
+  background-color: #212121;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6) inset;
+}
+#Menu li:active{
+  color: #212121;
+  background-color: white;
+}
+
+#Menu li div{
+  display: inline-block;
+  opacity: 0.6;
+}
+#Menu li span{
+  display: inline-block;
+  opacity: 0.6;
+  width: 150px;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 46px;
+}
+#Menu li:hover div{
+  background-color: transparent;
+  opacity: 0.9;
+}
+#Menu li:hover span{
+  background-color: transparent;
+  opacity: 0.9;
+}
 
 /** Animation Style **/
 
