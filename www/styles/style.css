@@ -31,13 +31,13 @@ section {
 }
 
 h1 {
-    font-size: 5em;
+    font-size: 70px;
     color: white;
 }/** Custom element Style **/
 
-p {
+h2 {
   color: white;
-  font-size: 2em;
+  font-size: 20px;
 }
 /*fade stuff*/
 @-webkit-keyframes fadeIn {
@@ -82,7 +82,7 @@ p {
 }
 
 #timer{
-  font-size: 6em;
+  font-size: 20px;
   color: white;
   min-width: 970px;
   position: absolute;
@@ -93,7 +93,7 @@ p {
 
 #timer p{
   text-align: right;
-  font-size: 0.1em;
+  font-size: 10px;
 }
 .case {
   padding: 10px;
@@ -102,6 +102,7 @@ p {
   background: #00816A;
   animation-name: okbg;
   animation-duration: .8s;
+  margin: 10px
 }
 
 .clock {
@@ -111,9 +112,10 @@ p {
   margin-bottom: 5px;
   animation-name: okfg;
   animation-duration: .8s;
+  font-size: 90px;
 }
 .unit{
-    font-size: 0.1em;
+    font-size: 10px;
     font-family: sans-serif;
 }
 
