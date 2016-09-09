@@ -34,9 +34,7 @@ function fileListToEjs(dir, callback){
 }
 //redirect ProTo to wwwFolder/home.html
 exp.get('/', function (req, res){
-res.render('../www/home.ejs',
- 					{ListDiapo : fs.readdirSync("www/diaporama"),
-					 ListSlide : fs.readdirSync("www/slides")});
+res.render('../www/home.ejs');
 
 /* FIXME : can't pass slides arguments
 		var slides = fs.readdirSync("www/slides");

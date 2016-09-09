@@ -5,46 +5,73 @@
 		<title>ProTo - Home</title>
 	</head>
 <body>
-	<% include partials/navBar.ejs %>
 	<section>
-		<div class="slide-content" id="Welcome">
-			<div class="middle-right">Proto</div>
-			<div class="middle-left"><span class="fade-el"> arque</span>
-				 			  								<span class="fade-el">supien</span>
-																<span class="fade-el">ïtien</span>
-				 												<span class="fade-el">zaure</span>
-				 												<span class="fade-el">zoaire</span>
-                                <span class="fade-el">type</span>
-                                <span class="fade-el">sapiens</span>
-			</div>
+		<h1>ProTo arrive bientôt \o/</h1>
+		<p>Pour vous aider à patienter voici un compte à rebours quantique*</p>
+		<div id="timer">
+			<div class=case><div class="clock"></div><span class=unit> jours </span></div>
+			<div class=case><div class="clock"></div><span class=unit> heures</span></div>
+			<div class=case><div class="clock"></div><span class=unit> minutes </span></div>
+			<div class=case><div class="clock"></div><span class=unit> secondes </span></div>
+			<div class=case><div class="clock"></div><span class=unit> secondesE-2</span></div>
+			<p>*Timer qui devrait décompter normalement sans changement d'état (cependant un abus d'observation reste suceptible de le faire "sauter" à une autre valeur)</p>
 		</div>
-
-		<% for(var i=0; i<ListSlide.length; i++) {%>
-			<% if(i==0) {%>
-				<div class="slide-content first">
-			<% }else{ %>
-				<div class="scroll-up-button-daddy">
-					<div class="scroll-up-button"></div>
-				</div>
-				<div class="slide-content">
-			<% } %>
-					<%- include('slides/' + ListSlide[i])%>
-				</div>
-			<% if(i==(ListSlide.length-1)) {%>
-				<div class="scroll-down-button"></div>
-			<% } >
-		<% } %>
-
 	</section>
-	<%# include partials/footer.ejs %>
 </body>
 <script>
-	function start(){
-		SlideStart();
-		fadeTab();
+var tick = setInterval(Quantiktimer, 80);
+	var end = new Date(2016, 9, 11, 3, 14, 15, 926);
+	var clock = document.getElementsByClassName("clock");
+	var clockCase = document.getElementsByClassName("case");
+
+	function setWarn(num){
+		clock[num].className = "clock warn";
+		clockCase[num].className = "case warn";
 	}
-	onload=start;
+
+	function unSetWarn(num){
+			clock[num].className = "clock";
+			clockCase[num].className = "case";
+	}
+
+	function endUpdate(){
+		 if(Math.random()>0.99){
+			 end.setMinutes(Math.floor(Math.random()*60));
+			 setWarn(2);
+			 setTimeout(unSetWarn,2000,2);
+		 }
+		 if(Math.random()>0.995){
+			 end.setHours(Math.floor(Math.random()*24));
+			 setWarn(1);
+			 setTimeout(unSetWarn,2000,1);
+		 }
+		 if(Math.random()>0.95){
+		  end.setSeconds(Math.floor(Math.random()*60));
+			setWarn(3);
+			setTimeout(unSetWarn,2000,3);
+		 }
+		 if(Math.random()>0.99){
+			 end.setMilliseconds(Math.floor(Math.random()*1000));
+			 setWarn(4);
+			 setTimeout(unSetWarn,2000,4);
+		 }
+		 if(Math.random()>0.9999){
+			 end.setDate(Math.floor(Math.random()*4));
+			 setWarn(0);
+			 setTimeout(unSetWarn,2000,0);
+		 }
+	}
+
+	function Quantiktimer(){
+		var t = end.getTime() - (new Date()).getTime();
+		clock[4].innerHTML = ("0" + Math.floor( (t % 1000 ))).slice(-2);
+		clock[3].innerHTML = ("0" + Math.floor( (t/1000) % 60 )).slice(-2);
+		clock[2].innerHTML = ("0" + Math.floor( (t/1000/60) % 60 )).slice(-2);
+		clock[1].innerHTML = ("0" + Math.floor( (t/(1000*60*60)) % 24 )).slice(-2);
+		clock[0].innerHTML = Math.floor( t/(1000*60*60*24) % 30);
+		setTimeout(endUpdate, Math.floor(Math.random()*10000));
+	}
+
+//	onload=start;
 </script>
-<% include script/fadeList.js %>
-<% include script/slide.js %>
 </html>
