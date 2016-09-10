@@ -18,6 +18,25 @@ footer {
 nav {
   z-index: 100;
 }
+nav ul
+{
+  list-style-type: none;
+  margin: 0px 0px 0px 0px;
+}
+nav li
+{
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+nav li a
+{
+  font-size: 1.3em;
+  position: relative;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
 
 /** General Purpose Position elelment Style **/
 .left {
@@ -41,15 +60,28 @@ nav {
 }
 
 /** Custom element Style **/
-.first {
+#Welcome { /*stinky banner*/
+  width: 100%;
+  background-color: #212121;
+  font-size: 6em;
+  color: white;
+  position: fixed;
+  min-height: 0px;
+  max-width: none;
+  z-index: -1;
+  margin: auto;
+  max-width: 1780px;
+}
+.first { /*TODO:Should not exist we shoumd have a proper banner*/
   margin-top: 200px;
 }
 
+
+/*tricky button for slide-content*/
 .slide-content button {
   background-color: white;
   position: absolute;
 }
-
 button.left-arrow{
   opacity: 0.5;
   border-top: 60px solid transparent;
@@ -59,16 +91,13 @@ button.left-arrow{
   left: 0%;
   transform: translate(0%,-50%);
 }
-
 button.left-arrow:hover{
   opacity: 0.3;
 }
-
 button.left-arrow:active{
     opacity: 0.5;
     border-right: 60px solid #FFA420;
 }
-
 button.right-arrow{
   opacity: 0.5;
   border-top: 60px solid transparent;
@@ -78,23 +107,21 @@ button.right-arrow{
   right: 0%;
   transform: translate(0%,-50%);
 }
-
 button.right-arrow:hover{
   opacity: 0.3;
 }
-
 button.right-arrow:active{
   opacity: 0.7;
   border-left: 60px solid #FFA420;
 }
 
+/*Dotted bar for diaporama navigation*/
 #scroll-bar-diapo{
   position: absolute;
   bottom: 0%;
   left: 50%;
   transform: translate(-50%,0%);
 }
-
 #scroll-bar-diapo button.round{
   position: relative;
   padding: 0;
@@ -107,20 +134,17 @@ button.right-arrow:active{
   margin: 10px;
   opacity: 0.3;
 }
-
 #scroll-bar-diapo button.selected{
   opacity: 0.7;
 }
-
 #scroll-bar-diapo button.round:hover{
   opacity: 0.7;
   border-color: #FFA420;
 }
-
 #scroll-bar-diapo button.round:active{
   opacity: 0.7;
 }
-
+/*footer's legal mention style*/
 #legal{
   text-align: center;
   height: 50px;
@@ -145,7 +169,16 @@ button.right-arrow:active{
   width: 100%;
   position: relative;
 }
+.slide-content h1 {
+  font-size: 3em;
+  color: #FFA420;
+}
 
+.slide-content p {
+  font-size: 1.5em;
+}
+
+/*For those who want a left and right kind of diposition*/
 .slide-left {
   position: absolute;
   top: 50%;
@@ -154,7 +187,6 @@ button.right-arrow:active{
   width: 45%;
   text-align: left;
 }
-
 .slide-right {
   position: absolute;
   top: 50%;
@@ -164,6 +196,7 @@ button.right-arrow:active{
   text-align: right;
 }
 
+/*scrol up/down button tricky code*/
 .scroll-down-button {
   height: 42px;
   background-image: url(/pics/slide-button.png);
@@ -174,8 +207,6 @@ button.right-arrow:active{
   background-position:top;
   background-size: contain;
 }
-
-/*scrol up button tricky code*/
 .scroll-up-button-daddy {
   overflow-x: hidden;
   position: relative;
@@ -185,7 +216,6 @@ button.right-arrow:active{
   height: 40px;
   max-width: 1780px; /* need to be change in .slide-content */
 }
-
 .scroll-up-button {
   height: 40px;
   background-image: url(/pics/slide-up-button.png);
@@ -197,12 +227,11 @@ button.right-arrow:active{
   border-left: 9999px solid white;
   border-right: 9999px solid white;
   position: absolute;
-  top: -9999px;
-  bottom: -9999px;
   left: -9999px;
   right: -9999px;
 }
 
+/**Here goes the navigations menus*/
 #HorzTopNav
 {
   color: #303030;;
@@ -216,56 +245,22 @@ button.right-arrow:active{
   box-shadow:  0px 5px 5px 0px #303030 ;
 }
 
-webSiteNav{
-  height: 100%
+#websiteNav{
+  margin-right: 100px;
 }
-nav ul
-{
-  list-style-type: none;
-  margin: 0px 0px 0px 0px;
-}
-
-nav li
-{
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
+#websiteNav li{
+  margin-top: 5px;
+  padding: 10px 5px 0px 5px;
 }
 
-nav li a
-{
-  font-size: 1.3em;
-  position: relative;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
+#contact:hover{
+  margin-top: 0px;
+  border-top: 5px solid #e25b49;
+  vertical-align: bottom;
 }
-
-#Welcome {
-  width: 100%;
-  background-color: #212121;
-  font-size: 6em;
+#contact:active{
   color: white;
-  position: fixed;
-  min-height: 0px;
-  max-width: none;
-  z-index: -1;
-  margin: auto;
-  max-width: 1780px;
-}
-
-.slide-content h1 {
-  font-size: 3em;
-  color: #FFA420;
-}
-
-.slide-content p {
-  font-size: 1.5em;
-}
-
-.nav-icon {
-  width: 46px;
-  height: 46px;
+  background-color: #e25b49;
 }
 
 #IconShortcut li a div {
@@ -273,6 +268,11 @@ nav li a
   height: 46px;
 }
 
+/*icon management part*/
+.nav-icon {
+  width: 46px;
+  height: 46px;
+}
 #home {
   background-image: url(/pics/home.png);
   display: inline-block;
@@ -281,9 +281,9 @@ nav li a
   vertical-align: bottom;
   width: 40px;
   height: 40px;
-  margin-left: 5px;
+  padding-left: 10;
 }
-#home:hover {
+li:hover #home {
   background-image: url(/pics/home-hover.png);
 }
 #office {
@@ -317,26 +317,7 @@ li:hover #gitlab {
   background-image: url(/pics/gitlab-hover.png);
 }
 
-#websiteNav{
-  margin-right: 100px;
-}
-
-#websiteNav li{
-  margin-top: 5px;
-  padding: 10px 5px 0px 5px;
-}
-
-#contact:hover{
-  margin-top: 0px;
-  border-top: 5px solid #e25b49;
-  vertical-align: bottom;
-}
-
-#contact:active{
-  color: white;
-  background-color: #e25b49;
-}
-
+/*Burger Menu Part*/
 #Menu {
   position:fixed;
   top: 0;
@@ -353,13 +334,11 @@ li:hover #gitlab {
   border-radius: 0px 0px 10px 10px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
 }
-
 #Menu:hover {
   background-image: url(/pics/burger-menu-hover.png);
   opacity: 0.9;
   border-radius: 0px;
 }
-
 #Menu ul{
   position: fixed;
   top : 46px;
@@ -369,11 +348,9 @@ li:hover #gitlab {
   background-color: white;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
 }
-
 #Menu:hover ul{
   display: block;
 }
-
 #Menu li{
   display: block;
   margin-bottom: 0px;
@@ -390,7 +367,6 @@ li:hover #gitlab {
   color: #212121;
   background-color: white;
 }
-
 #Menu li div{
   display: inline-block;
   opacity: 0.6;
@@ -414,7 +390,7 @@ li:hover #gitlab {
 
 /** Animation Style **/
 
-/*slide stuff*/
+/*slide stuff*/ /*TODO: Might be smoother using keyframes*/;
 .diaporama{
   overflow-x: hidden;
 }
@@ -431,11 +407,9 @@ li:hover #gitlab {
 .diapo.right{
     right: -9999px;
 }
-
 .diapo.left{
   right: 9999px;
 }
-
 .diapo.in {
   right: 0px;
 }
@@ -457,7 +431,6 @@ li:hover #gitlab {
     opacity: 1;
   }
 }
-
 @keyframes fadeOut {
   to {
     opacity: 0;
@@ -467,14 +440,12 @@ li:hover #gitlab {
 .fade-el {
   display: none;
 }
-
 .fade-in {
   -webkit-animation: fadeIn 1s ease-in 1 forwards;
   animation: fadeIn 1s ease-in 1 forwards;
   opacity: 0;
   color: #FFA420;
 }
-
 .fade-out {
   -webkit-animation: fadeOut .5s ease-in 1 forwards;
   animation: fadeOut .5s ease-in 1 forwards;

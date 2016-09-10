@@ -6,11 +6,44 @@
 <body>
 	<% include partials/navBar.ejs %>
 	<section>
-		<div class=slide class=center>
+		<div class="slide-content">
 			<h1>#404</h1>
-			<p>There must be another way...</p>
+			<div class="diapo right">
+				<p>Oh my god! is it an old #404 page?</p>
+			</div>
+			<div class="diapo right">
+				<p>Don't stay here any longer here! Things could get dangerous!</p>
+			</div>
+			<div class="diapo right">
+				<p>There, a trustful safe link absolutly secure the should lead to a nicer safer prettier place!</p>
+				<div id=safePlaceBtn><a href="/"> Very trustful and secure place button</a></div>
+			</div>
 		</div>
 	</section>
-	<%// include partials/footer.ejs %>
+	<% include partials/footer.ejs %>
 </body>
+<script>
+  function GoToSlide(num){
+    el1 = Sladelist[i],
+    el2 = Sladelist[num];
+    el1.className = "diapo left";
+    el2.classList.add("in");
+    i=num;
+  }
+  function SlidePlay(){
+    if(i<Sladelist.length-1){
+      GoToSlide(i+1);
+    }	else {
+			window.clearInterval();
+		}
+  }
+  function SlideStart(){
+    Sladelist[0].classList.add("in");
+    play=window.setInterval(SlidePlay,tempo);
+  }
+  var Sladelist = document.getElementsByClassName("diapo");
+  var i = 0;
+  var tempo = 2000;
+	onload = SlideStart;
+</script>
 </html>
