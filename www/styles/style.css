@@ -283,7 +283,7 @@ button.right-arrow:active{
   height: 40px;
   padding-left: 10;
 }
-li:hover #home {
+a:hover #home {
   background-image: url(/pics/home-hover.png);
 }
 #office {
@@ -390,7 +390,7 @@ li:hover #gitlab {
 
 /** Animation Style **/
 
-/*slide stuff*/ /*TODO: Might be smoother using keyframes*/;
+/*slide stuff*/ /*TODO: Might be  using keyframes*/;
 .diaporama{
   overflow-x: hidden;
 }
@@ -431,12 +431,12 @@ li:hover #gitlab {
     opacity: 1;
   }
 }
+
 @keyframes fadeOut {
   to {
     opacity: 0;
   }
 }
-
 .fade-el {
   display: none;
 }
