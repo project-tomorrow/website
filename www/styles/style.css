@@ -4,7 +4,12 @@ html { /*TODO : find a better way for smooth scrolling (not wellsuported)*/
 }
 body {
   background-color: #212121;
-  margin: 0px;
+  background-image: url(/pics/light-bulb.svg);
+  background-repeat: no-repeat;
+  background-position: 50% -100px;
+  background-size:1280px 1148px;
+  background-attachment: fixed;
+  margin: 0;
 }
 
 section {
@@ -77,21 +82,20 @@ h1
 
 /** Custom element Style **/
 #Welcome { /*stinky banner*/
-  width: 100%;
-  background-color: #212121;
+  width: 650px;
+  background-color: transparent;
   color: white;
   position: fixed;
   min-height: 0px;
-  max-width: none;
   z-index: -1;
-  margin: auto;
-  max-width: 1780px;
+  right: 50%;
+  transform: translate(50%);
   font: normal 8em  'Signika Negative';
 }
 #Welcome div.middle-left{
-  font: normal 220px 'Stalemate';
+  font: normal 220px 'Stalemate', cursive;
   font-size: 6cm;
-  /*font: normal 10em 'Stalemate', cursive;*/
+  text-align: center;
 }
 .first { /*TODO:Should not exist we shoumd have a proper banner*/
   margin-top: 380px;
@@ -223,7 +227,7 @@ button.right-arrow:active{
   display: inline-block;
   width: 100%;
   position: relative;
-  overflow: hidden; /*avoid overflow for stuf like dipo*/
+  overflow: hidden; /*avoid overflows for stuf like dipo*/
 }
 .slide-content h1 {
   /*font-size: 2em;
@@ -517,4 +521,16 @@ li:hover #gitlab {
   animation: fadeOut .5s ease-in 1 forwards;
   opacity: 1;
   color: #FFA420;
+}
+
+/*Scss part*/
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
 }
