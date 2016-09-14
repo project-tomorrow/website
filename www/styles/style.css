@@ -37,6 +37,20 @@ nav li a
   color: inherit;
   text-decoration: none;
 }
+p
+{
+  font-family: 'Open Sans', sans-serif;
+	text-rendering: optimizeLegibility;
+	text-align: justify;
+  color: #212121;
+}
+h1
+{
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 2em;
+  color: #FFA420;
+}
 
 /** General Purpose Position elelment Style **/
 .left {
@@ -63,7 +77,6 @@ nav li a
 #Welcome { /*stinky banner*/
   width: 100%;
   background-color: #212121;
-  font-size: 6em;
   color: white;
   position: fixed;
   min-height: 0px;
@@ -71,9 +84,15 @@ nav li a
   z-index: -1;
   margin: auto;
   max-width: 1780px;
+  font: normal 8em  'Signika Negative';
+}
+#Welcome div.middle-left{
+  font: normal 220px 'Stalemate';
+  font-size: 6cm;
+  /*font: normal 10em 'Stalemate', cursive;*/
 }
 .first { /*TODO:Should not exist we shoumd have a proper banner*/
-  margin-top: 200px;
+  margin-top: 380px;
 }
 
 
@@ -171,12 +190,12 @@ button.right-arrow:active{
   overflow: hidden; /*avoid overflow for stuf like dipo*/
 }
 .slide-content h1 {
-  font-size: 3em;
-  color: #FFA420;
+  /*font-size: 2em;
+  color: #FFA420;*/
 }
 
 .slide-content p {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 /*For those who want a left and right kind of diposition*/
