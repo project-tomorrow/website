@@ -1,9 +1,11 @@
+var conf = require('./config/config');
 var express = require('express'),
 		exp = express();
 var fs = require('fs');
 var bunyan = require('bunyan'),
 		log = bunyan.createLogger({
 				name: 'ProTo Server',
+				level: conf.logLevel,
 				serializers: {
 					req: bunyan.stdSerializers.req,
 					res: bunyan.stdSerializers.res
@@ -11,10 +13,7 @@ var bunyan = require('bunyan'),
 		});
 //var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-
 var colors = require('colors');
-
-var conf = require('./config/config');
 
 //pages integration
 exp.use(express.static(conf.wwwFolder));
@@ -71,6 +70,7 @@ exp.get('*', function (req, res){
 
 //Fonction d'écoute sur conf.listenInterface en conf.listenPort
 exp.listen(conf.listenPort, conf.listenInterface,function(){
+	conf.info(function(fileconfig){log.debug(fileconfig)});
 	log.info( ': server running using port : '
 	          + colors.inverse(conf.listenPort) + ' at the interface : '
 						+ colors.inverse(conf.listenInterface));
