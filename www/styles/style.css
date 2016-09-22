@@ -1,12 +1,21 @@
 /** Standart element Style **/
+html { /*TODO : find a better way for smooth scrolling (not wellsuported)*/
+  scroll-behavior: smooth;
+}
 body {
   background-color: #212121;
-  margin: 0px;
+  background-image: url(/pics/light-bulb.svg);
+  background-repeat: no-repeat;
+  background-position: 50% -100px;
+  background-size:1280px 1148px;
+  background-attachment: fixed;
+  margin: 0;
 }
 
 section {
   padding-top: 60px;
   text-align: center;
+  color: #212121;
 }
 
 footer {
@@ -37,6 +46,18 @@ nav li a
   color: inherit;
   text-decoration: none;
 }
+p
+{
+  font-family: 'Open Sans', sans-serif;
+	text-rendering: optimizeLegibility;
+}
+h1
+{
+  font-family: 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  font-size: 2em;
+  color: #FFA420;
+}
 
 /** General Purpose Position elelment Style **/
 .left {
@@ -61,19 +82,23 @@ nav li a
 
 /** Custom element Style **/
 #Welcome { /*stinky banner*/
-  width: 100%;
-  background-color: #212121;
-  font-size: 6em;
+  width: 650px;
+  background-color: transparent;
   color: white;
   position: fixed;
   min-height: 0px;
-  max-width: none;
   z-index: -1;
-  margin: auto;
-  max-width: 1780px;
+  right: 50%;
+  transform: translate(50%);
+  font: normal 8em  'Signika Negative';
+}
+#Welcome div.middle-left{
+  font: normal 220px 'Stalemate', cursive;
+  font-size: 6cm;
+  text-align: center;
 }
 .first { /*TODO:Should not exist we shoumd have a proper banner*/
-  margin-top: 200px;
+  margin-top: 380px;
 }
 
 
@@ -114,19 +139,51 @@ button.right-arrow:active{
   opacity: 0.7;
   border-left: 60px solid #FFA420;
 }
+.up-arrow{
+  opacity: 0.7;
+  border-bottom: 15px solid white;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  position: relative;
+  top:30%;
+  left: 50%;
+  height: 0px;
+  width: 0px;
+  transform: translate(-50%,0%);
+}
+.up-arrow:hover{
+  opacity: 1;
+  border-bottom-color: #FFA420;
+}
+.down-arrow{
+  opacity: 0.7;
+  border-top: 15px solid #212121;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  position: relative;
+  top:30%;
+  left: 50%;
+  height: 0px;
+  width: 0px;
+  transform: translate(-50%,0%);
+}
+.down-arrow:hover{
+  opacity: 1;
+  border-top-color: #FFA420;
+}
 
 /*Dotted bar for diaporama navigation*/
 #scroll-bar-diapo{
   position: absolute;
   bottom: 0%;
   left: 50%;
-  transform: translate(-50%,0%);
+  transform: translate(-50%,-50%);
 }
 #scroll-bar-diapo button.round{
   position: relative;
   padding: 0;
-  border-radius: 15px;
-  border-width: 15px;
+  border-radius: 12px;
+  border-width: 12px;
   border-style: solid;
   border-color: black;
   width: 0px;
@@ -164,19 +221,22 @@ button.right-arrow:active{
   max-width: 1780px; /* need to be change in .scroll-up-button-daddy */
   margin-left: auto;
   margin-right: auto;
-  min-height: 800px;
+  height: 85%;
+  min-height: 553px;
+  max-height: 1106px;
   display: inline-block;
   width: 100%;
   position: relative;
-  overflow: hidden; /*avoid overflow for stuf like dipo*/
+  overflow: hidden; /*avoid overflows for stuf like dipo*/
 }
 .slide-content h1 {
-  font-size: 3em;
-  color: #FFA420;
+  /*font-size: 2em;
+  color: #FFA420;*/
 }
 
 .slide-content p {
-  font-size: 1.5em;
+  font-size: 1em;
+  text-align: justify;
 }
 
 /*For those who want a left and right kind of diposition*/
@@ -213,7 +273,7 @@ button.right-arrow:active{
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 200px;
+  margin-top: 10%;
   height: 40px;
   max-width: 1780px; /* need to be change in .slide-content */
 }
@@ -231,7 +291,6 @@ button.right-arrow:active{
   left: -9999px;
   right: -9999px;
 }
-
 /**Here goes the navigations menus*/
 #HorzTopNav
 {
@@ -462,4 +521,16 @@ li:hover #gitlab {
   animation: fadeOut .5s ease-in 1 forwards;
   opacity: 1;
   color: #FFA420;
+}
+
+/*Scss part*/
+@function stroke($stroke, $color) {
+  $shadow: ();
+  $from: $stroke*-1;
+  @for $i from $from through $stroke {
+   @for $j from $from through $stroke {
+      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
+    }
+  }
+  @return $shadow;
 }

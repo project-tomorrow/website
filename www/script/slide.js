@@ -3,9 +3,15 @@
   function GoToSlide(num){
     el1 = Sladelist[i],
     el2 = Sladelist[num];
-    if(el1.classList.contains("right")) el1.className = "diapo left";
-    else if(el1.classList.contains("left")) el1.className = "diapo right";
-    el2.classList.add("in");
+    if(i<num){
+      if(el1.classList.contains("right")) el1.className = "diapo left";
+      else if(el1.classList.contains("left")) el1.className = "diapo right";
+      el2.classList.add("in");
+    } else {
+      el1.classList.remove("in");
+      if(el2.classList.contains("right")) el2.className = "diapo left in";
+      else if(el2.classList.contains("left")) el2.className = "diapo right in";      
+    }
     Buttonlist[i].className = "round";
     Buttonlist[num].classList.add("selected");
     i=num;

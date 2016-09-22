@@ -7,13 +7,13 @@
 <body>
 	<% include partials/navBar.ejs %>
 	<section>
-		<div class="slide-content" id="Welcome">
-			<div class="middle-right">Proto</div>
+		<div id="Welcome">
+			<div class="middle-right">ProTo</div>
 			<div class="middle-left"><span class="fade-el"> arque</span>
 				 			  								<span class="fade-el">supien</span>
 																<span class="fade-el">ïtien</span>
-				 												<span class="fade-el">zaure</span>
-				 												<span class="fade-el">zoaire</span>
+				 												<!--<span class="fade-el">zaure</span>
+				 												<span class="fade-el">zoaire</span>-->
                                 <span class="fade-el">type</span>
                                 <span class="fade-el">sapiens</span>
 			</div>
@@ -21,17 +21,19 @@
 
 		<% for(var i=0; i<ListSlide.length; i++) {%>
 			<% if(i==0) {%>
-				<div class="slide-content first">
+				<div class="slide-content first" id="slide<%=i%>">
 			<% }else{ %>
-				<div class="scroll-up-button-daddy">
-					<div class="scroll-up-button"></div>
-				</div>
+				<div class="scroll-up-button-daddy"  id="slide<%=i%>"><div class="scroll-up-button">
+						<a href="#slide<%=i-1%>"><div class="up-arrow"></div></a>
+				</div></div>
 				<div class="slide-content">
 			<% } %>
 					<%- include('slides/' + ListSlide[i])%>
 				</div>
 			<% if(i!=(ListSlide.length-1)) {%>
-				<div class="scroll-down-button"></div>
+				<div class="scroll-down-button">
+					<a href="#slide<%=i+1%>"><div class="down-arrow"></div></a>
+				</div>
 			<% } %>
 		<% } %>
 	</section>
