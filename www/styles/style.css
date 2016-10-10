@@ -80,6 +80,13 @@ h1
   display: inline-block;
 }
 
+.vertical-text {
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
 /** Custom element Style **/
 #Welcome { /*stinky banner*/
   width: 650px;
@@ -218,7 +225,7 @@ button.right-arrow:active{
   background-color: white;
   text-align: center;
   z-index: 10;
-  max-width: 1780px; /* need to be change in .scroll-up-button-daddy */
+  /*max-width: 1780px; /* need to be change in .scroll-up-button-daddy */
   margin-left: auto;
   margin-right: auto;
   height: 85%;
@@ -243,18 +250,22 @@ button.right-arrow:active{
 .slide-left {
   position: absolute;
   top: 50%;
-  left: 30%;
-  transform: translate(-55%, -50%);
+  right: 50%;
+  transform: translate(0%, -50%);
   width: 45%;
   text-align: left;
+  max-width: 880px;
+  margin-right: 10px
 }
 .slide-right {
   position: absolute;
   top: 50%;
-  right: 30%;
-  transform: translate(55%, -50%);
+  left: 50%;
+  transform: translate(0%, -50%);
   width: 45%;
   text-align: right;
+  max-width: 880px;
+  margin-left: 10px;
 }
 
 /*scrol up/down button tricky code*/
@@ -275,7 +286,7 @@ button.right-arrow:active{
   margin-right: auto;
   margin-top: 10%;
   height: 40px;
-  max-width: 1780px; /* need to be change in .slide-content */
+  /*max-width: 1780px; /* need to be change in .slide-content */
 }
 .scroll-up-button {
   height: 40px;
@@ -414,16 +425,11 @@ li:hover #gitlab {
   border-radius: 0px;
 }
 #Menu ul{
-  position: fixed;
-  top : 46px;
-  right: 10px;
   padding: 10px 0px 10px 0px;
-  display: none;
-  background-color: white;
-  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
+  display: inline-block;
 }
-#Menu:hover ul{
-  display: block;
+#Menu:hover div{
+  display: inline-block;
 }
 #Menu li{
   display: block;
@@ -460,6 +466,23 @@ li:hover #gitlab {
 #Menu li:hover span{
   background-color: transparent;
   opacity: 0.9;
+}
+#PrivateMenu{
+  display: none;
+  position: fixed;
+  top : 46px;
+  right: 10px;
+  background-color: white;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
+}
+#PrivateLabel{
+  position: absolute;
+  width:50px;
+  height: 100%;
+  transform: translateX(-100%);
+  background-color: #e25b49;
+  color: white;
+  opacity: 100;
 }
 
 /** Animation Style **/
@@ -521,16 +544,4 @@ li:hover #gitlab {
   animation: fadeOut .5s ease-in 1 forwards;
   opacity: 1;
   color: #FFA420;
-}
-
-/*Scss part*/
-@function stroke($stroke, $color) {
-  $shadow: ();
-  $from: $stroke*-1;
-  @for $i from $from through $stroke {
-   @for $j from $from through $stroke {
-      $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
-    }
-  }
-  @return $shadow;
 }
