@@ -415,13 +415,11 @@ li:hover #gitlab {
   background-repeat:no-repeat;
   background-size: contain;
   background-color: white;
-  opacity: 0.8;
   border-radius: 0px 0px 10px 10px;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
 }
 #Menu:hover {
   background-image: url(/pics/burger-menu-hover.png);
-  opacity: 0.9;
   border-radius: 0px;
 }
 #Menu ul{
@@ -439,7 +437,6 @@ li:hover #gitlab {
 #Menu li:hover{
   color: white;
   padding: 3px;
-  opacity: 0.9;
   background-color: #212121;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6) inset;
 }
@@ -449,11 +446,9 @@ li:hover #gitlab {
 }
 #Menu li div{
   display: inline-block;
-  opacity: 0.6;
 }
 #Menu li span{
   display: inline-block;
-  opacity: 0.6;
   width: 150px;
   text-align: left;
   padding-left: 10px;
@@ -461,11 +456,9 @@ li:hover #gitlab {
 }
 #Menu li:hover div{
   background-color: transparent;
-  opacity: 0.9;
 }
 #Menu li:hover span{
   background-color: transparent;
-  opacity: 0.9;
 }
 #PrivateMenu{
   display: none;
