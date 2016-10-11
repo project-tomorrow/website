@@ -246,6 +246,13 @@ button.right-arrow:active{
   text-align: justify;
 }
 
+.slide-content img {
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 /*For those who want a left and right kind of diposition*/
 .slide-left {
   position: absolute;
@@ -253,9 +260,11 @@ button.right-arrow:active{
   right: 50%;
   transform: translate(0%, -50%);
   width: 45%;
+  height: 100%;
+  margin-right: 20px;
+  padding-left: 20px;
   text-align: left;
   max-width: 880px;
-  margin-right: 10px
 }
 .slide-right {
   position: absolute;
@@ -263,9 +272,14 @@ button.right-arrow:active{
   left: 50%;
   transform: translate(0%, -50%);
   width: 45%;
+  height: 100%;
   text-align: right;
   max-width: 880px;
-  margin-left: 10px;
+  margin-left: 20px;
+  padding-right: 10px;
+}
+.slide-right img{
+  text-align: center;
 }
 
 /*scrol up/down button tricky code*/
@@ -483,9 +497,10 @@ li:hover #gitlab {
 /*slide stuff*/ /*TODO: Might be better using keyframes*/
 .diapo {
   width: 100%;
+  height: 90%;
   position: absolute;
-  top: 50%;
-  transform: translate(0%,-50%);
+/*  top: 50%;
+  transform: translate(0%,-50%);*/
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(.42, 0, .58, 1);
