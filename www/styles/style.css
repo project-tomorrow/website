@@ -112,7 +112,6 @@ h2
   margin-top: 380px;
 }
 
-
 /*tricky button for slide-content*/
 .slide-content button {
   background-color: white;
@@ -186,9 +185,9 @@ button.right-arrow:active{
 /*Dotted bar for diaporama navigation*/
 #scroll-bar-diapo{
   position: absolute;
-  bottom: 0%;
+  top: 0%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%,50%);
 }
 #scroll-bar-diapo button.round{
   position: relative;
@@ -232,6 +231,8 @@ button.right-arrow:active{
   /*max-width: 1780px; /* need to be change in .scroll-up-button-daddy */
   margin-left: auto;
   margin-right: auto;
+  min-height: 553px;
+  max-height: 1106px;
   min-height: 85vh;
   display: inline-block;
   width: 100%;
@@ -318,6 +319,38 @@ button.right-arrow:active{
   left: -9999px;
   right: -9999px;
 }
+
+.diapo-text {
+  display: block;
+  min-width: 300px;
+  height: 80%;
+  padding-left: 150px;
+  border-left: 15px solid black;
+  margin-left: 107.5px;
+  margin-top: -180px;
+  margin-bottom: -130px;
+  padding-right: 50px;
+}
+.diapo-logo{
+  height: 200px;
+  width: 200px;
+  border: 15px solid black;
+  border-radius: 200px;
+  display: inline-block;
+  position: sticky;
+  top: 10%;
+  text-align: center;
+  background-color: white;
+  margin-top: 50px;
+}
+.diapo-logo img{
+  position: relative;
+  left: auto;
+  transform: translate(0,-50%);
+  max-height: 80%;
+  max-width: 80%
+}
+
 
 /*people Management section */
 #people-exit{
@@ -697,12 +730,15 @@ li:hover #gitlab {
 /** Animation Style **/
 
 /*slide stuff*/ /*TODO: Might be better using keyframes*/
+#diaporama {
+  height: 80%;
+  width: 80%;
+  display: inline-block;
+  overflow-y: scroll;
+}
 .diapo {
-  width: 100%;
-  height: 90%;
-  position: absolute;
-/*  top: 50%;
-  transform: translate(0%,-50%);*/
+  display: inline-block;
+  text-align: left;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: cubic-bezier(.42, 0, .58, 1);
