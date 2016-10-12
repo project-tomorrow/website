@@ -181,28 +181,52 @@ button.right-arrow:active{
 /*Dotted bar for diaporama navigation*/
 #scroll-bar-diapo{
   position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%,50%);
+  height: 10%;
+  width: 60%;
+  background-color: white;
+  box-shadow: 0px 25px 25px 0px white;
+  margin-left: 20%;
+  padding-right: 20%;
 }
-#scroll-bar-diapo button.round{
+#angle-bar-diapo{
+  height: 50%;
+  display: inline-block;
+  width: 40%;
+  left: 10%;
+  bottom: 0;
+  position: absolute;
+  margin-left: 107.5px;
+  border-left: 15px solid black;
+  border-top: 15px solid black;
+  border-top-left-radius: 50px;
+}
+#nav-bar-diapo{
+  position: relative;
+  border:  15px solid black;
+  background-color: white;
+  width: auto;
+}
+
+#scroll-bar-diapo .round{
   position: relative;
   padding: 0;
-  border-radius: 12px;
-  border-width: 12px;
+  border-radius: 50px;
+  border-width: 5px;
   border-style: solid;
   border-color: black;
-  width: 0px;
-  height: 0px;
+  width: 75px;
+  height: 75px;
   margin: 10px;
-  opacity: 0.3;
+  display: inline-flex;
+  opacity: 0.8
 }
-#scroll-bar-diapo button.selected{
-  opacity: 0.7;
+#scroll-bar-diapo .selected{
+  border-color: #e25b49;
+  opacity: 1;
 }
-#scroll-bar-diapo button.round:hover{
+#scroll-bar-diapo .round:hover{
   opacity: 0.7;
-  border-color: #FFA420;
+  border-color: #e25b49;
 }
 #scroll-bar-diapo button.round:active{
   opacity: 0.7;
@@ -322,7 +346,7 @@ button.right-arrow:active{
   padding-left: 150px;
   border-left: 15px solid black;
   margin-left: 107.5px;
-  margin-top: -180px;
+  margin-top: -280px;
   margin-bottom: -130px;
   padding-right: 50px;
 }
@@ -337,6 +361,7 @@ button.right-arrow:active{
   text-align: center;
   background-color: white;
   margin-top: 50px;
+  margin-bottom: 100px;
 }
 .diapo-logo img{
   position: relative;

@@ -1,14 +1,19 @@
 <div id="scroll-bar-diapo">
-  <% for(var i=0; i<ListDiapo.length; i++) {%>
-   <button onclick="GoToSlide(<%= i %>)" class="round"></button>
-  <% } %>
+  <!--div id="angle-bar-diapo"></div>-->
+  <!--div id="nav-bar-diapo"-->
+    <% for(var i=0; i<(LogoDiapo.length/2); i++) {%>
+     <a  class="round" onclick="GoToSlide(<%= i %>)">
+       <img src="pics/diapo-nav/<%=LogoDiapo[i]%>"></img>
+     </a>
+    <% } %>
+  <!--/div>-->
 </div>
 
-<div id="diaporama" ><!--onmouseover="SlideStop()"
+<div id="diaporama" onscroll="detectFocused()"><!--onmouseover="SlideStop()"
                                      onfocussout="SlideStart()">-->
 <div>
 <% for(var i=0; i<ListDiapo.length; i++) {%>
-  <div class="diapo">
+  <div id="diapo<%= i %>" class="diapo">
     <%- include('../diaporama/' + ListDiapo[i])%>
   </div>
 <% } %>
