@@ -56,6 +56,7 @@ exp.get('/', function (req, res){
 	res.render('../www/home.ejs',
 	 					{ListDiapo : fs.readdirSync("www/diaporama"),
 						 ListSlide : fs.readdirSync("www/slides"),
+				 	 LogoDiapo : fs.readdirSync("www/pics/diapo-nav")});
 					 	 Title : TitleNavBar[0]
 					 	});
 });
