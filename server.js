@@ -31,6 +31,16 @@ function fileListToEjs(dir, callback){
 		callback(files);
 	});
 }
+function shuffle(array, callback) {
+  for (var currentIndex = array.length, randomIndex,temporaryValue;
+			0 !== currentIndex;) {
+    randomIndex = Math.floor(Math.random() * currentIndex--);
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+  callback(array);
+}
 //redirect ProTo to wwwFolder/home.html
 exp.get('/', function (req, res){
 res.render('../www/home.ejs',
@@ -51,8 +61,14 @@ var showPeople = function(req, res, db, callback){
 };
 
 /**People page**/
-/*exp.get('/people', function (req, res){
-	MongoClient.connect(config.mongoDbUrl, function(req, res, err, db) {
+exp.get('/people', function (req, res){
+	fileListToEjs("www/people",function(files){
+		shuffle(files,function(array){
+			res.render('../www/people.ejs',{ListePeople : files});
+		})
+	})
+});
+/*	MongoClient.connect(config.mongoDbUrl, function(req, res, err, db) {
   	log.info("Connected correctly to the db.");
 		showPeople(req, res, db, function() {
 			db.close();

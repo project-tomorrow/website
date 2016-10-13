@@ -1,16 +1,25 @@
 <html>
 	<head>
 		<% include partials/head.ejs %>
-		<link rel="icon" type="image/png" href="favicon.ico" sizes="32x32">
-		<title>ProTo - Home</title>
+		<title>ProTo - L'équipe</title>
 	</head>
 <body>
 	<% include partials/navBar.ejs %>
 	<section>
-
-
+		<div class="slide-content">
+<!-- HACK: very poor and bad code below : do a proper script -->
+			<div id="people-exit" onclick="	document.getElementById('people-exit').className='';
+																	document.getElementsByClassName('vip opened')[0].className='vip';">
+			</div>
+			<% for(var i=0; i<ListePeople.length; i++) {%>
+				<div class="vip" onclick="this.classList.add('opened');
+																	getElementById('people-exit').classList.add('opened')">
+					<%- include('people/' + ListePeople[i])%>
+				</div>
+			<% } %>
+		</div>
 	</section>
-	<%# include partials/footer.ejs %>
+	<% include partials/footer.ejs %>
 </body>
 <% include script/fadeList.js %>
 </html>
