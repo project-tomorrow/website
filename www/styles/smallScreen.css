@@ -1,0 +1,152 @@
+.slide-content h1 {
+  font-size: 3em;
+}
+
+.slide-content p {
+  font-size: 2em;
+}
+.slide-content img{
+  position: inherit;
+  transform: none;
+}
+.slide-left{
+  position: static;
+  width: 100%;
+  text-align: center;
+  transform: none;
+  display: block;
+  height: auto;
+}
+.slide-right{
+  position: static;
+  width: 100%;
+  text-align: center;
+  transform: none;
+  display: block;
+  height: auto;
+}
+
+#HorzTopNav {
+  display: none;
+}
+#Menu {
+  position:fixed;
+  top: 0;
+  right: 0;
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  border-radius: 0px 0px 30px 30px;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+#Menu:hover {
+  background-image: url(/pics/burger-menu-hover.png);
+  border-radius: 0px;
+}
+
+#Menu ul{
+  padding: 10px 0px 10px 0px;
+  display: inline-block;
+}
+
+#Menu li{
+  display: inline-block;
+  margin-bottom: 0px;
+  padding: 20px;
+  height: 230px;
+  min-width: 230px;
+  width: 25%;
+  text-align: center;
+}
+
+#Menu li:hover{
+  color: white;
+  padding: 3px;
+  background-color: #212121;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6) inset;
+}
+#Menu li:active{
+  color: #212121;
+  background-color: white;
+}
+#Menu li div{
+  display: inline-block;
+}
+#Menu li span{
+  display: inline-block;
+  text-align: center;
+  font-size: 3em;
+  width: auto;
+}
+#Menu li:hover div{
+  background-color: transparent;
+}
+#Menu li:hover span{
+  background-color: transparent;
+}
+#MenuContainer{
+  display: none;
+  position: fixed;
+  overflow: scroll;
+  box-shadow: none;
+  border-radius: 50px 0 50px 50px;
+  border: 5px solid  #212121;
+  background-color: white;
+  top : 150px;
+  right: 0px;
+  opacity: 0.9;
+  max-height: 80%
+}
+#PrivateLabel{
+  display: none;
+}
+#PublicLabel{
+  display: none;
+}
+.nav-icon {
+  width: 200px;
+  height: 200px;
+}
+.slide-content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-height: none;
+  height: auto;
+}
+#diaporama{
+  width: auto;
+  height: auto;
+}
+.diapo-text{
+  display: block;
+  min-width: 300px;
+  height: auto;
+  padding-left: 0px;
+  border-left: none;
+  margin-left: 10px;
+  margin-bottom: 0;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.diapo{
+  text-align: center;
+}
+.diapo-text h1{
+  text-align: center;
+}
+.diapo-logo{
+  top: 0;
+  margin: 0;
+  height: 400px;
+  width: 400px;
+  border: none;
+}
+#scroll-bar-diapo{
+  display: none;
+}
+
+.scroll-up-button{
+  display: none;
+}
