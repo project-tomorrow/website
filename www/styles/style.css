@@ -458,6 +458,26 @@ button.right-arrow:active{
 .vip.opened .profileLinks-daddy{
   display: block;
 }
+#linkedin {
+  background-image: url(/pics/office.png);
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+}
+a:hover #linkedin {
+  background-image: url(/pics/office-hover.png);
+}
+#mail {
+  background-image: url(/pics/office.png);
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+}
+a:hover #mail {
+  background-image: url(/pics/office-hover.png);
+}
 
 /**Here goes the navigations menus*/
 #HorzTopNav
@@ -543,6 +563,7 @@ a:hover #home {
 li:hover #office {
   background-image: url(/pics/office-hover.png);
 }
+
 #sharepoint {
   background-image: url(/pics/sharepoint.png);
   display: inline-block;
