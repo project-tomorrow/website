@@ -58,6 +58,10 @@ h1
   font-size: 2em;
   color: #FFA420;
 }
+h2
+{
+  font-family: 'Open Sans', sans-serif;
+}
 
 /** General Purpose Position elelment Style **/
 .left {
@@ -350,7 +354,7 @@ button.right-arrow:active{
 }
 .vip.opened{
   height: 500px;
-  width: 650px;
+  width: 60%;
   text-align: left;
   position: absolute;
   left: 50%;
@@ -362,7 +366,7 @@ button.right-arrow:active{
   box-shadow: none;
 }
 .name{
-  text-align: left;
+  text-align: left;margin: 5px;
 }
 .vip h1{
   font-size: 1.2em;
@@ -372,15 +376,16 @@ button.right-arrow:active{
   font-size: 0.8em;
   margin: 0;
 }
-.pics{
+img.pics{
+  transform: none;
+  position: static;
   height: 190px;
   width: 190px;
   border: 10px solid #e33528;
   border-radius: 200px;
-  background-color: green;
   display: inline-block;
 }
-.vip.opened .pics{
+.vip.opened img.pics{
   display: block;
 }
 .name{
@@ -399,6 +404,7 @@ button.right-arrow:active{
 }
 .vip.opened .name h2{
   display: inline-block;
+  font-size: 0.9em;
 }
 
 .profileLinks{
@@ -407,10 +413,15 @@ button.right-arrow:active{
 .profileLinks p{
   display: none;
 }
+.profileLinks p{
+  display: none;
+  color: #212121;
+}
+
 .vip.opened .profileLinks p{
   display: inline-block;
   margin: 0;
-  line-height: 30px;
+  line-height: 34px;
   vertical-align: bottom;
 }
 .logoPeople{
@@ -418,6 +429,7 @@ button.right-arrow:active{
   width: 30px;
   display: inline-block;
   background-color: white;
+  margin: 2px 2px 2px 0;
 }
 .vip.opened .profileLinks{
   position: absolute;
@@ -434,13 +446,13 @@ button.right-arrow:active{
   padding-right: 10px;
 }
 .vip.opened .bio{
-    width : 400px;
-    height: auto;
-    right: 0;
-    top: 0;
-    padding-top: 100px;
-    padding-right: 10px;
-    visibility: visible;
+  width: auto;
+  height: auto;
+  left: 245px;
+  top: 0;
+  padding-top: 100px;
+  padding-right: 10px;
+  visibility: visible;
 }
 .status{
   font-size: 0.6em;
@@ -454,29 +466,30 @@ button.right-arrow:active{
 }
 .profileLinks-daddy{
   display: inline-block;
+
 }
 .vip.opened .profileLinks-daddy{
   display: block;
 }
 #linkedin {
-  background-image: url(/pics/office.png);
+  background-image: url(/pics/linkedin.png);
   display: inline-block;
   background-repeat:no-repeat;
   background-size: contain;
   vertical-align: bottom;
 }
 a:hover #linkedin {
-  background-image: url(/pics/office-hover.png);
+  background-image: url(/pics/linkedin-hover.png);
 }
 #mail {
-  background-image: url(/pics/office.png);
+  background-image: url(/pics/mail.png);
   display: inline-block;
   background-repeat:no-repeat;
   background-size: contain;
   vertical-align: bottom;
 }
 a:hover #mail {
-  background-image: url(/pics/office-hover.png);
+  background-image: url(/pics/mail-hover.png);
 }
 
 /**Here goes the navigations menus*/
