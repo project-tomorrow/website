@@ -1,7 +1,10 @@
 <div id="scroll-bar-diapo">
   <!--div id="angle-bar-diapo"></div>-->
   <!--div id="nav-bar-diapo"-->
-    <% for(var i=0; i<(LogoDiapo.length/2); i++) {%>
+    <a  class="round selected" onclick="GoToSlide(<%= 0 %>)">
+      <img src="pics/diapo-nav/sel-1.png"></img>
+    </a>
+    <%for(var i=1; i<(LogoDiapo.length/2); i++) {%>
      <a  class="round" onclick="GoToSlide(<%= i %>)">
        <img src="pics/diapo-nav/<%=LogoDiapo[i]%>"></img>
      </a>
