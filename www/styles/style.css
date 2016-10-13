@@ -349,6 +349,7 @@ button.right-arrow:active{
   margin-top: -280px;
   margin-bottom: -130px;
   padding-right: 50px;
+  padding-top: 150px;
 }
 .diapo-logo{
   height: 200px;
@@ -440,6 +441,16 @@ a:hover #home {
 li:hover #office {
   background-image: url(/pics/office-hover.png);
 }
+#Mail {
+  background-image: url(/pics/contact.png);
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+}
+li:hover #Mail {
+  background-image: url(/pics/contact-hover.png);
+}
 #sharepoint {
   background-image: url(/pics/sharepoint.png);
   display: inline-block;
@@ -494,8 +505,9 @@ li:hover #gitlab {
 #Menu ul{
   padding: 10px 0px 10px 0px;
   display: inline-block;
+  height: 100%;
 }
-#Menu:hover div{
+#Menu:hover #MenuContainer{
   display: inline-block;
 }
 #Menu li{
@@ -529,7 +541,7 @@ li:hover #gitlab {
 #Menu li:hover span{
   background-color: transparent;
 }
-#PrivateMenu{
+#MenuContainer{
   display: none;
   position: fixed;
   top : 46px;
@@ -546,6 +558,16 @@ li:hover #gitlab {
   color: white;
   opacity: 100;
 }
+#PublicLabel{
+  position: absolute;
+  width:50px;
+  bottom: 0;
+  transform: translateX(-100%);
+  background-color: #50ad37;
+  color: white;
+  opacity: 100;
+}
+
 
 /** Animation Style **/
 
