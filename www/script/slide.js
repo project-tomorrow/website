@@ -30,7 +30,7 @@
     for (;(Sladelist[i].offsetTop+Sladelist[i].offsetHeight) < (diaporama.scrollTop+150);) i++;
     Buttonlist[SladeNumber].className = "round";
     Buttonlist[i].classList.add("selected");
-    Buttonlist[SladeNumber].children[0].src = "diapo-nav/" + (i+1) + ".png";
+    Buttonlist[SladeNumber].children[0].src = "diapo-nav/" + (SladeNumber+1) + ".png";
     Buttonlist[i].children[0].src = "diapo-nav/sel-" + (i+1) + ".png";
     SladeNumber=i;
   }
