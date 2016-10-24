@@ -1,0 +1,29 @@
+{
+  "name": "main_site",
+  "version": "1.0.0",
+  "description": "Main ProTo's website",
+  "main": "server.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "bunyan": "^1.8.3",
+    "colors": "^1.1.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "mongodb": "^2.2.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.project-tomorrow.fr:WebSite/Main.git"
+  },
+  "keywords": [
+    "Main"
+  ],
+  "author": "Thibault Cattelani",
+  "license": "ISC"
+}
