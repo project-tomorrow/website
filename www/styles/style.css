@@ -232,9 +232,7 @@ button.right-arrow:active{
   /*max-width: 1780px; /* need to be change in .scroll-up-button-daddy */
   margin-left: auto;
   margin-right: auto;
-  height: 85%;
-  min-height: 553px;
-  max-height: 1106px;
+  min-height: 85vh;
   display: inline-block;
   width: 100%;
   position: relative;
