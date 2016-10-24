@@ -15,6 +15,7 @@ var bunyan = require('bunyan'),
 var assert = require('assert');
 var colors = require('colors');
 
+
 //pages integration
 exp.use(express.static(conf.wwwFolder));
 //css integration
@@ -45,7 +46,8 @@ function shuffle(array, callback) {
 exp.get('/', function (req, res){
 res.render('../www/home.ejs',
  					{ListDiapo : fs.readdirSync("www/diaporama"),
-					 ListSlide : fs.readdirSync("www/slides")});
+					 ListSlide : fs.readdirSync("www/slides"),
+				 	 Title : 'Home'});
 
 /* FIXME : can't pass slides arguments
 		var slides = fs.readdirSync("www/slides");
@@ -64,7 +66,8 @@ var showPeople = function(req, res, db, callback){
 exp.get('/people', function (req, res){
 	fileListToEjs("www/people",function(files){
 		shuffle(files,function(array){
-			res.render('../www/people.ejs',{ListePeople : files});
+			res.render('../www/people.ejs',{ListePeople : files,
+																			Title : 'Team'});
 		})
 	})
 });

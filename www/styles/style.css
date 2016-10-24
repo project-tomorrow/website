@@ -512,6 +512,7 @@ a:hover #mail {
 #websiteNav li{
   margin-top: 5px;
   padding: 10px 5px 0px 5px;
+  height: 25px;
 }
 
 #contact:hover{
@@ -566,6 +567,11 @@ a:hover #mail {
 a:hover #home {
   background-image: url(/pics/home-hover.png);
 }
+#home.selected{
+  background-color: #212121;
+  background-image: url(/pics/home-selected.png);
+}
+
 #office {
   background-image: url(/pics/office.png);
   display: inline-block;
