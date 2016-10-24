@@ -1,20 +1,20 @@
 <nav id="HorzTopNav">
   <a href="/"><div id="home" class="nav-icon left
-     <% if(Title=='Home'){ %>
+    <% if(Title==TitleNavBar[0]){ %>
        selected
     <% } %>  >">
   </div></a>
   <ul id="webSiteNav">
-    <li id="people"
-      <% if(Title=='Team'){ %>
-          class="selected"
-      <% } %>  >
-      <a href="/people">
-        L'équipe
-      </a>
-    </li>
-    <li id="contact"><a href="mailto:contact@project-tomorrow.fr">Nous contacter</a></li>
-    <!--<li class="contact"><a href="/contact">Nous contacter</a></li>-->
+    <% for(var i=1; i<TitleNavBar.length; i++) {%>
+			<li id="<%- ColorNavBar[i]%>Nav"
+        <% if(Title== TitleNavBar[i]){ %>
+            class="selected"
+        <% } %>  >
+        <a href="<%- RefNavBar[i]%>">
+          <%- TextNavBar[i] %>
+        </a>
+      </li>
+    <% } %>
   </ul>
 </nav>
 <nav id="Menu" class="right nav-icon">

@@ -515,26 +515,32 @@ a:hover #mail {
   height: 25px;
 }
 
-#contact:hover{
+#redNav:hover{
   margin-top: 0px;
   border-top: 5px solid #e25b49;
   vertical-align: bottom;
 }
-#contact:active{
+#redNav:active{
   color: white;
   background-color: #e25b49;
 }
+#redNav.selected{
+  color: white;
+  background-color: #e25b49;
+  margin-top: 0px;
+  border-top: 5px solid #e25b49;
+}
 
-#people:hover{
+#blueNav:hover{
   margin-top: 0px;
   border-top: 5px solid #50adff;
   vertical-align: bottom;
 }
-#people:active{
+#blueNav:active{
   color: white;
   background-color: #50adff;
 }
-#people.selected{
+#blueNav.selected{
   color: white;
   background-color: #50adff;
   margin-top: 0px;

@@ -42,12 +42,20 @@ function shuffle(array, callback) {
   }
   callback(array);
 }
+
+//Horizontal navBar button
+global.TitleNavBar = ['Home' ,'Team'	  ,'Contact' ];
+global.RefNavBar 	 = ['/'    ,'/people' ,'/contact'];
+global.TextNavBar  = ['	  ' ,'L\'équipe','Contact' ];
+global.ColorNavBar = ['black','blue'    ,'red'     ];
+
 //redirect ProTo to wwwFolder/home.html
 exp.get('/', function (req, res){
 res.render('../www/home.ejs',
  					{ListDiapo : fs.readdirSync("www/diaporama"),
 					 ListSlide : fs.readdirSync("www/slides"),
-				 	 Title : 'Home'});
+				 	 Title : TitleNavBar[0]
+				 	});
 
 /* FIXME : can't pass slides arguments
 		var slides = fs.readdirSync("www/slides");
@@ -58,27 +66,21 @@ res.render('../www/home.ejs',
 });
 
 //redirect ProTo/member to wwwFolder/people.html
-var showPeople = function(req, res, db, callback){
-	log.info("Connected");
-};
-
-/**People page**/
 exp.get('/people', function (req, res){
 	fileListToEjs("www/people",function(files){
 		shuffle(files,function(array){
 			res.render('../www/people.ejs',{ListePeople : files,
-																			Title : 'Team'});
+																			Title : TitleNavBar[1],
+																			TitleNavBar :TitleNavBar
+																		 });
 		})
 	})
 });
-/*	MongoClient.connect(config.mongoDbUrl, function(req, res, err, db) {
-  	log.info("Connected correctly to the db.");
-		showPeople(req, res, db, function() {
-			db.close();
-		});
-	});
 
-});*/
+//redirect to contact form
+exp.get('/contact', function (req, res){
+	res.render('../www/contact.ejs',{Title : TitleNavBar[2]});
+});
 
 //redirect erroneous pages to 404
 exp.get('*', function (req, res){
