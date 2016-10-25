@@ -224,7 +224,8 @@ button.right-arrow:active{
   height: 75px;
   margin: 10px;
   display: inline-flex;
-  opacity: 0.8
+  opacity: 0.8;
+  cursor: pointer;
 }
 #scroll-bar-diapo .selected{
   border-color: #e25b49;
