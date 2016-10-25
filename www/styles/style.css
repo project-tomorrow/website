@@ -58,7 +58,10 @@ h1
   font-size: 2em;
   color: #FFA420;
 }
-
+h2
+{
+  font-family: 'Open Sans', sans-serif;
+} 
 /** General Purpose Position elelment Style **/
 .left {
  float: left;
