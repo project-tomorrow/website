@@ -10,7 +10,7 @@
     } else {
       el1.classList.remove("in");
       if(el2.classList.contains("right")) el2.className = "diapo left in";
-      else if(el2.classList.contains("left")) el2.className = "diapo right in";      
+      else if(el2.classList.contains("left")) el2.className = "diapo right in";
     }
     Buttonlist[i].className = "round";
     Buttonlist[num].classList.add("selected");
@@ -50,5 +50,4 @@
   var i = 0;
   var tempo = 2000;
   var play;
-  //Calls the init function on pageload.
 </script>

@@ -232,9 +232,7 @@ button.right-arrow:active{
   /*max-width: 1780px; /* need to be change in .scroll-up-button-daddy */
   margin-left: auto;
   margin-right: auto;
-  height: 85%;
-  min-height: 553px;
-  max-height: 1106px;
+  min-height: 85vh;
   display: inline-block;
   width: 100%;
   position: relative;
@@ -512,28 +510,35 @@ a:hover #mail {
 #websiteNav li{
   margin-top: 5px;
   padding: 10px 5px 0px 5px;
+  height: 25px;
 }
 
-#contact:hover{
+#redNav:hover{
   margin-top: 0px;
   border-top: 5px solid #e25b49;
   vertical-align: bottom;
 }
-#contact:active{
+#redNav:active{
   color: white;
   background-color: #e25b49;
 }
+#redNav.selected{
+  color: white;
+  background-color: #e25b49;
+  margin-top: 0px;
+  border-top: 5px solid #e25b49;
+}
 
-#people:hover{
+#blueNav:hover{
   margin-top: 0px;
   border-top: 5px solid #50adff;
   vertical-align: bottom;
 }
-#people:active{
+#blueNav:active{
   color: white;
   background-color: #50adff;
 }
-#people.selected{
+#blueNav.selected{
   color: white;
   background-color: #50adff;
   margin-top: 0px;
@@ -566,6 +571,11 @@ a:hover #mail {
 a:hover #home {
   background-image: url(/pics/home-hover.png);
 }
+#home.selected{
+  background-color: #212121;
+  background-image: url(/pics/home-selected.png);
+}
+
 #office {
   background-image: url(/pics/office.png);
   display: inline-block;

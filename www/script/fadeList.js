@@ -22,5 +22,4 @@
 
   var fadelist = document.getElementsByClassName("fade-el");
   var inc = 0;
-  //Calls the init function on pageload.
 </script>

@@ -1,11 +1,25 @@
+<%# Horizontale nav bar %>
 <nav id="HorzTopNav">
-  <a href="/"><div id="home" class="nav-icon left"></div></a>
+  <a href="/"><div id="home" class="nav-icon left
+    <% if(Title==TitleNavBar[0]){ %>
+       selected
+    <% } %>  >">
+  </div></a>
   <ul id="webSiteNav">
-    <li id="people"><a href="/people">L'équipe</a></li>
-    <li id="contact"><a href="mailto:contact@project-tomorrow.fr">Nous contacter</a></li>
-    <!--<li class="contact"><a href="/contact">Nous contacter</a></li>-->
+    <% for(var i=1; i<TitleNavBar.length; i++) {%>
+			<li id="<%- ColorNavBar[i]%>Nav"
+        <% if(Title== TitleNavBar[i]){ %>
+            class="selected"
+        <% } %>  >
+        <a href="<%- RefNavBar[i]%>">
+          <%- TextNavBar[i] %>
+        </a>
+      </li>
+    <% } %>
   </ul>
 </nav>
+
+<%# Burger Menu %>
 <nav id="Menu" class="right nav-icon">
   <div id="PrivateMenu">
   <div id="PrivateLabel"><p class=vertical-text>Accès réservé</p></div>
