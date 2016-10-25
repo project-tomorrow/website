@@ -10,17 +10,17 @@
     }
     var speed = Math.round(distance / 100);
     if  (speed >= 30) speed = 30;
-    var step = Math.round(distance / 50);
+    var step = Math.round(distance / 60);
     var leapY = stopY > startY ? startY + step : startY - step;
     var timer = 0;
     if (stopY > startY) {
         for ( var i=startY; i<stopY; i+=step ) {
-            setTimeout("diaporama.scrollTo(0, "+leapY+")", timer * speed);
+            setTimeout(function(){diaporama.scrollTop+= step;}, timer * speed);
             leapY += step; if (leapY > stopY) leapY = stopY; timer++;
         } return;
     }
     for ( var i=startY; i>stopY; i-=step ) {
-        setTimeout("diaporama.scrollTo(0, "+leapY+")", timer * speed);
+        setTimeout(function(){diaporama.scrollTop-= step;}, timer * speed);
         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
   }
