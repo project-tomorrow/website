@@ -185,12 +185,14 @@ button.right-arrow:active{
 /*Dotted bar for diaporama navigation*/
 #scroll-bar-diapo{
   position: absolute;
-  height: 10%;
   width: 60%;
+  width: calc(80% - 220px);
   background-color: white;
   box-shadow: 0px 25px 25px 0px white;
   margin-left: 20%;
   padding-right: 20%;
+  margin-left: calc(10% + 122.5px);
+  padding-right:  calc(10% + 122.5px);
 }
 #angle-bar-diapo{
   height: 50%;
