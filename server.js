@@ -43,20 +43,20 @@ function shuffle(array, callback) {
 
 //Horizontal navBar global var
 //------------------------------------------------------------------------------
-global.TitleNavBar = ['Home' ,'Team'	  ,'Contact' ];
-global.RefNavBar 	 = ['/'    ,'/people' ,'/contact'];
-global.TextNavBar  = ['	  ' ,'L\'équipe','Contact' ];
-global.ColorNavBar = ['black','blue'    ,'red'     ];
+global.TitleNavBar = ['Home' ,'Team'	   ,'Contact' ];
+global.RefNavBar 	 = ['/'    ,'/people'  ,'/contact'];
+global.TextNavBar  = [''     ,'L\'équipe','Contact' ];
+global.ColorNavBar = ['black','blue'     ,'red'     ];
 
 //------------------------------------------------------------------------------
-//													Rooter Part
+//													Router Part
 //------------------------------------------------------------------------------
 
 exp.get('/', function (req, res){
 	res.render('../www/home.ejs',
 	 					{ListDiapo : fs.readdirSync("www/diaporama"),
 						 ListSlide : fs.readdirSync("www/slides"),
-				 	 LogoDiapo : fs.readdirSync("www/pics/diapo-nav")});
+				 	 	 LogoDiapo : fs.readdirSync("www/pics/diapo-nav"),
 					 	 Title : TitleNavBar[0]
 					 	});
 });
@@ -65,8 +65,7 @@ exp.get('/people', function (req, res){
 	fileListToEjs("www/people",function(files){
 		shuffle(files,function(array){
 			res.render('../www/people.ejs',{ListePeople : files,
-																			Title : TitleNavBar[1],
-																			TitleNavBar :TitleNavBar
+																			Title : TitleNavBar[1]
 																		 });
 		})
 	})
