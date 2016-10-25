@@ -655,6 +655,16 @@ li:hover #office {
 li:hover #Mail {
   background-image: url(/pics/contact-hover.png);
 }
+#Team {
+  background-image: url(/pics/contact.png);
+  display: inline-block;
+  background-repeat:no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+}
+li:hover #Team {
+  background-image: url(/pics/contact-hover.png);
+}
 #sharepoint {
   background-image: url(/pics/sharepoint.png);
   display: inline-block;
@@ -753,6 +763,9 @@ li:hover #gitlab {
   background-color: white;
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.6);
 }
+.subMenu{
+  position: relative;
+}
 #PrivateLabel{
   position: absolute;
   width:50px;
@@ -770,6 +783,7 @@ li:hover #gitlab {
   background-color: #50ad37;
   color: white;
   opacity: 100;
+  height: 100%;
 }
 
 

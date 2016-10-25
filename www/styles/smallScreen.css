@@ -150,3 +150,65 @@
 .scroll-up-button{
   display: none;
 }
+
+.vip.opened{
+  height: 90vh;
+  width: 90%;
+}
+
+.vip h1{
+  font-size: 1.2em;
+  margin: 0;
+}
+.vip h2{
+  font-size: 1em;
+  margin: 0;
+}
+.vip h3{
+  font-size: .9em;
+  margin: 0;
+}
+.vip.opened h3{
+  margin-top: 1.4em;
+}
+img.pics{
+  position: static;
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+}
+.name{
+  font-size: 2em;
+}
+.vip.opened .name{
+  font-size: 2.2em;
+}
+.profileLinks{
+  display: block;
+}
+.logoPeople{
+  height: 60px;
+  width: 60px;
+  margin: 4px 4px 4px 2px;
+}
+
+.vip.opened .bio{
+  overflow: scroll;
+}
+.status{
+  font-size: 1.6em;
+}
+.vip.opened .status{
+  display: block;
+  top: 1em;
+  position: absolute;
+  left: 245px;
+  z-index: 10;
+}
+.profileLinks-daddy{
+  display: inline-block;
+
+}
+.vip.opened .profileLinks-daddy{
+  display: block;
+}
