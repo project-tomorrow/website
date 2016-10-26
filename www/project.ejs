@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<% include partials/head.ejs %>
+	</head>
+<body>
+	<% include partials/navBar.ejs %>
+	<section>
+		<div class="slide-content">
+			<%# HACK: very poor and bad code below : do a proper script %>
+			<% for(var i=0; i<ListeProject.length; i++) {%>
+				<%- include('projects/' + ListeProject[i])%>
+			<% } %>
+		</div>
+	</section>
+	<% include partials/footer.ejs %>
+</body>
+<% include script/fadeList.js %>
+</html>

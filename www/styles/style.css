@@ -625,6 +625,23 @@ a:hover #mail {
   margin-top: 0px;
   border-top: 5px solid #50adff;
 }
+
+#greenNav:hover{
+  margin-top: 0px;
+  border-top: 5px solid #50ad37;
+  vertical-align: bottom;
+}
+#greenNav:active{
+  color: white;
+  background-color: #50ad37;
+}
+#greenNav.selected{
+  color: white;
+  background-color: #50ad37;
+  margin-top: 0px;
+  border-top: 5px solid #50ad37;
+}
+
 #IconShortcut li a div {
   width: 46px;
   height: 46px;

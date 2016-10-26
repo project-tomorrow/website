@@ -27,6 +27,7 @@ exp.use(express.static(conf.scriptFolder));//js  integration
 //------------------------------------------------------------------------------
 function fileListToEjs(dir, callback){
 	fs.readdir(dir, function(err, files) {
+		log.debug(files);
 		callback(files);
 	});
 }
@@ -43,10 +44,10 @@ function shuffle(array, callback) {
 
 //Horizontal navBar global var
 //------------------------------------------------------------------------------
-global.TitleNavBar = ['Home' ,'Team'	   ,'Contact' ];
-global.RefNavBar 	 = ['/'    ,'/people'  ,'/contact'];
-global.TextNavBar  = [''     ,'L\'équipe','Contact' ];
-global.ColorNavBar = ['black','blue'     ,'red'     ];
+global.TitleNavBar = ['Home' 	,'Project'		,'Team'			,'Contact'	];
+global.RefNavBar 	 = ['/'    	,'/project' 	,'/people'  ,'/contact'	];
+global.TextNavBar  = [''     	,'Les projets','L\'équipe','Contact'	];
+global.ColorNavBar = ['black'	,'green'			,'blue'     ,'red'    	];
 
 //------------------------------------------------------------------------------
 //													Router Part
@@ -54,25 +55,33 @@ global.ColorNavBar = ['black','blue'     ,'red'     ];
 
 exp.get('/', function (req, res){
 	res.render('../www/home.ejs',
-	 					{ListDiapo : fs.readdirSync("www/diaporama"),
-						 ListSlide : fs.readdirSync("www/slides"),
-				 	 	 LogoDiapo : fs.readdirSync("www/pics/diapo-nav"),
+	 					{ListDiapo : fs.readdirSync('www/diaporama'),
+						 ListSlide : fs.readdirSync('www/slides'),
+				 	 	 LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
 					 	 Title : TitleNavBar[0]
 					 	});
 });
 
 exp.get('/people', function (req, res){
-	fileListToEjs("www/people",function(files){
+	fileListToEjs('www/people',function(files){
 		shuffle(files,function(array){
 			res.render('../www/people.ejs',{ListePeople : files,
-																			Title : TitleNavBar[1]
+																			Title : TitleNavBar[2]
 																		 });
 		})
 	})
 });
 
 exp.get('/contact', function (req, res){
-	res.render('../www/contact.ejs',{Title : TitleNavBar[2]});
+	res.render('../www/contact.ejs',{Title : TitleNavBar[3]});
+});
+
+exp.get('/project', function (req, res){
+	fileListToEjs('www/projects',function(files){
+		res.render('../www/project.ejs',{ListeProject : files,
+																	 	 Title : TitleNavBar[1]
+																  	})
+	})
 });
 
 exp.get('*', function (req, res){
