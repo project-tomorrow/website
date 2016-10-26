@@ -373,6 +373,7 @@ button.right-arrow:active{
   padding-top: 150px;
 }
 .diapo-logo{
+  position: relative;
   height: 200px;
   width: 200px;
   border: 15px solid black;
@@ -384,6 +385,7 @@ button.right-arrow:active{
   background-color: white;
   margin-top: 50px;
   margin-bottom: 100px;
+  z-index: 30;
 }
 .diapo-logo img{
   position: relative;

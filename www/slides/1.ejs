@@ -14,11 +14,9 @@
 
 <div id="diaporama" onscroll="detectFocused()"><!--onmouseover="SlideStop()"
                                      onfocussout="SlideStart()">-->
-<div>
 <% for(var i=0; i<ListDiapo.length; i++) {%>
   <div id="diapo<%= i %>" class="diapo">
     <%- include('../diaporama/' + ListDiapo[i])%>
   </div>
 <% } %>
-</div>
 </div>
