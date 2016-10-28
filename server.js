@@ -2,6 +2,7 @@ var conf = require('./config/config');
 var express = require('express'),
 		exp = express();
 var fs = require('fs');
+var path = require('path');
 var bunyan = require('bunyan'),
 		log = bunyan.createLogger({
 				name: 'ProTo Server',
@@ -55,8 +56,10 @@ global.ColorNavBar = ['black'	,'green'			,'blue'     ,'red'    	];
 
 exp.get('/', function (req, res){
 	res.render('../www/home.ejs',
-	 					{ListDiapo : fs.readdirSync('www/diaporama'),
-						 ListSlide : fs.readdirSync('www/slides'),
+	 					{ListDiapo : fs.readdirSync('www/index/diaporama'),
+						 ListSlide : fs.readdirSync('www/index').filter(function(file) {
+    			 			return fs.statSync(path.join('www/index', file)).isFile();
+  					 }),
 				 	 	 LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
 					 	 Title : TitleNavBar[0]
 					 	});
