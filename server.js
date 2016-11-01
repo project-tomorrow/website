@@ -98,7 +98,7 @@ exp.get('*', function (req, res){
 //------------------------------------------------------------------------------
 exp.listen(conf.listenPort, conf.listenInterface,function(){
 	conf.info(function(fileconfig){log.debug(fileconfig)});
-	log.info( ': server running using port : '
+	log.info( 'Server running using port : '
 	          + colors.inverse(conf.listenPort) + ' at the interface : '
 						+ colors.inverse(conf.listenInterface));
 });
