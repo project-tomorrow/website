@@ -3,4 +3,6 @@ before_script:
 test:
         script:
                 - cp config/config.js.example config/config.js
+                - lessc www/styles/style.less www/styles/style.css
+                - lessc www/styles/smallScreen.less www/styles/smallScreen.css
                 - cp -ru ../Main /home/thibault/web/test

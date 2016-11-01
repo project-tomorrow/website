@@ -2,3 +2,5 @@
 node_modules
 config/config.js
 npm-debug.log
+www/style/*.css
+www/style/style.css.old
