@@ -259,6 +259,7 @@ button.right-arrow:active{
   min-height: 85vh;
   display: inline-block;
   width: 100%;
+  padding: 20px 20px 20pc 20px;
   position: relative;
   overflow: hidden; /*avoid overflows for stuf like dipo*/
 }
@@ -287,8 +288,8 @@ button.right-arrow:active{
   transform: translate(0%, -50%);*/
   width: 45%;
 /*  height: 100%;*/
-  margin-right: 20px;
-  padding-left: 20px;
+  margin-right: 10px;
+  padding-left: 10px;
   text-align: left;
   max-width: 880px;
   display: inline-block;
@@ -302,7 +303,7 @@ button.right-arrow:active{
 /*  height: 100%;*/
   text-align: right;
   max-width: 880px;
-  margin-left: 20px;
+  margin-left: 10px;
   padding-right: 10px;
   display: inline-block;
 }
