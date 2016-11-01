@@ -1,7 +1,4 @@
 /** Standart element Style **/
-html { /*TODO : find a better way for smooth scrolling (not wellsuported)*/
-  scroll-behavior: smooth;
-}
 body {
   background-color: #212121;
   background-image: url(/pics/light-bulb.svg);
@@ -589,14 +586,33 @@ a:hover #mail {
   margin-right: 100px;
 }
 #websiteNav li{
-  margin-top: 5px;
-  padding: 10px 5px 0px 5px;
+  margin-top: 0px;
+  padding: 15px 5px 0px 5px;
   height: 25px;
 }
+#websiteNav li {
+  text-decoration: none;
+  position: relative;
+}
+#websiteNav li::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+border-top: 0px solid #303030;
+transition: 0.4s;
+}
+#websiteNav li:hover:after {
+  width: 100%;
+}
+#websiteNav li.selected:after {
+  transition: none;
+}
 
-#redNav:hover{
-  margin-top: 0px;
-  border-top: 5px solid #e25b49;
+#redNav:hover:after{
+  /*margin-top: 0px;*/
+  border-top: 7px solid #e25b49;
   vertical-align: bottom;
 }
 #redNav:active{
@@ -606,13 +622,10 @@ a:hover #mail {
 #redNav.selected{
   color: white;
   background-color: #e25b49;
-  margin-top: 0px;
-  border-top: 5px solid #e25b49;
 }
 
-#blueNav:hover{
-  margin-top: 0px;
-  border-top: 5px solid #50adff;
+#blueNav:hover:after{
+  border-top: 7px solid #50adff;
   vertical-align: bottom;
 }
 #blueNav:active{
@@ -622,13 +635,10 @@ a:hover #mail {
 #blueNav.selected{
   color: white;
   background-color: #50adff;
-  margin-top: 0px;
-  border-top: 5px solid #50adff;
 }
 
-#greenNav:hover{
-  margin-top: 0px;
-  border-top: 5px solid #50ad37;
+#greenNav:hover:after{
+  border-top: 7px solid #50ad37;
   vertical-align: bottom;
 }
 #greenNav:active{
@@ -638,8 +648,6 @@ a:hover #mail {
 #greenNav.selected{
   color: white;
   background-color: #50ad37;
-  margin-top: 0px;
-  border-top: 5px solid #50ad37;
 }
 
 #IconShortcut li a div {
