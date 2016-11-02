@@ -7,7 +7,7 @@
   </div></a>
   <ul id="webSiteNav">
     <% for(var i=1; i<TitleNavBar.length; i++) {%>
-			<li id="<%- ColorNavBar[i]%>Nav"
+			<li id="<%- ColorNavBar[i]%>Nav" onclick="this.className='selected'"
         <% if(Title== TitleNavBar[i]){ %>
             class="selected"
         <% } %>  >
