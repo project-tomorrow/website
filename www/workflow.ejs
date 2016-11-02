@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<% include partials/head.ejs %>
+	</head>
+<body>
+	<% include partials/navBar.ejs %>
+	<section><div class="slide-content">
+    <div id="scroll-bar-diapo">
+      <!--div id="angle-bar-diapo"></div>-->
+      <!--div id="nav-bar-diapo"-->
+        <a  class="round selected" onclick="GoToSlide(<%= 0 %>)">
+          <img src="/diapo-nav/sel-1.png"></img>
+        </a>
+        <%for(var i=1; i<(LogoDiapo.length/2); i++) {%>
+         <a  class="round" onclick="GoToSlide(<%= i %>)">
+           <img src="/diapo-nav/<%=LogoDiapo[i]%>"></img>
+         </a>
+        <% } %>
+      <!--/div>-->
+    </div>
+
+    <div id="diaporama" onscroll="detectFocused()"><!--onmouseover="SlideStop()"
+                                         onfocussout="SlideStart()">-->
+    <% for(var i=0; i<ListDiapo.length; i++) {%>
+      <div id="diapo<%= i %>" class="diapo">
+        <%- include('workflow/' + ListDiapo[i])%>
+      </div>
+    <% } %>
+    </div>
+  </div></section>
+	<% include partials/footer.ejs %>
+</body>
+<% include script/slide.js %>
+</html>

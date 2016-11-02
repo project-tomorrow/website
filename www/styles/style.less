@@ -1,10 +1,10 @@
 @DARKGREY: #212121;
-@ORANGE: #ffa420;
-@RED: #e25b49;
-@GREEN: #50ad37;
-@BLUE: #50adff;
-@GREY: #303030;
-
+@ORANGE:   #ffa420;
+@RED: 	   #e25b49;
+@GREEN:    #50ad37;
+@BLUE:     #50adff;
+@GREY:     #303030;
+@YELLOW:   #fcdc12;
 
 /** Standard element style**/
 body {
@@ -590,6 +590,20 @@ a {
 }
 #redNav.selected {
 	background-color: @RED;
+	color: white;
+}
+#yellowNav {
+	&:hover:after {
+		border-top: 7px solid @YELLOW;
+		vertical-align: bottom;
+	}
+	&:active {
+		background-color: @YELLOW;
+		color: white;
+	}
+}
+#yellowNav.selected {
+	background-color: @YELLOW;
 	color: white;
 }
 #blueNav {
