@@ -453,7 +453,7 @@ button.right-arrow {
 	.bio {
 		height: auto;
 		left: 245px;
-		padding-right: 10px;
+		padding-right: @SlidePadding;
 		padding-top: 100px;
 		top: 0;
 		visibility: visible;
@@ -655,24 +655,12 @@ a {
 }
 li {
 	&:hover {
-		#office {
-			background-image: url(/pics/office-hover.png);
-		}
-		#Mail {
-			background-image: url(/pics/contact-hover.png);
-		}
-		#Team {
-			background-image: url(/pics/contact-hover.png);
-		}
-		#sharepoint {
-			background-image: url(/pics/sharepoint-hover.png);
-		}
-		#slack {
-			background-image: url(/pics/slack-hover.png);
-		}
-		#gitlab {
-			background-image: url(/pics/gitlab-hover.png);
-		}
+		#office 		{ background-image: url(/pics/office-hover.png);}
+		#Mail 			{	background-image: url(/pics/contact-hover.png);}
+		#Team 			{	background-image: url(/pics/contact-hover.png);}
+		#sharepoint {	background-image: url(/pics/sharepoint-hover.png);}
+		#slack 			{	background-image: url(/pics/slack-hover.png);}
+		#gitlab 		{ background-image: url(/pics/gitlab-hover.png);}
 	}
 }
 #Mail {
