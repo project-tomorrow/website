@@ -3,7 +3,7 @@
 ### First install node packages ###
 ```
 npm install
-npm install -g bunyan #to get bunyan tools (need root access on linux)
+npm install -g bunyan less #need root access on linux
 ```
 ### Second Create/Edit config file ###
 ```
@@ -14,6 +14,10 @@ For windows' cmd users : you need to edit rootFolder. Remove process.env.PWD and
 You may also want to change the config.logLevel value for debug
 
 ## How to run ##
+First generate stylesSheets
+```
+lessc www/styles/style.less www/styles/style.css
+```
 For those who don't care about logs or other server side information :
 ```
 node server.js
