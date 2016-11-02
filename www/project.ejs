@@ -5,12 +5,12 @@
 <body>
 	<% include partials/navBar.ejs %>
 	<section>
-		<div class="slide-content">
 			<%# HACK: very poor and bad code below : do a proper script %>
 			<% for(var i=0; i<ListeProject.length; i++) {%>
-				<%- include('projects/' + ListeProject[i])%>
+				<div class="slide-content">
+					<%- include('projects/' + ListeProject[i])%>
+				</div>
 			<% } %>
-		</div>
 	</section>
 	<% include partials/footer.ejs %>
 </body>
