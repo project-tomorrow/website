@@ -3,7 +3,7 @@
 @RED: #e25b49;
 @GREEN: #50ad37;
 @BLUE: #50adff;
-@GREY: #303030; 
+@GREY: #303030;
 
 
 /** Standard element style**/
@@ -420,9 +420,6 @@ button.right-arrow {
 	&:hover {
 		box-shadow: none;
 	}
-	img.pics {
-		display: block;
-	}
 	.name {
 		display: block;
 		font-size: 1.6em;
@@ -437,6 +434,9 @@ button.right-arrow {
 			display: inline-block;
 			font-size: 0.9em;
 		}
+	}
+	img.pics {
+		display: block;
 	}
 	.profileLinks {
 		left: 105px;
@@ -483,6 +483,9 @@ img.pics {
 	position: static;
 	transform: none;
 	width: 190px;
+	background-image: url(/default-people.png);
+	background-repeat:no-repeat;
+	background-size: contain;
 }
 .profileLinks {
 	display: inline-block;
