@@ -1,12 +1,12 @@
-@DARKGREY: #212121; // Appears 8 times
-@ORANGE: #ffa420; // Appears 7 times
-@RED: #e25b49; // Appears 6 times
-@GREEN: #50ad37; // Appears 4 times
-@BLUE: #50adff; // Appears 3 times
-@GREY: #303030; // Appears 3 times
+@DARKGREY: #212121;
+@ORANGE: #ffa420;
+@RED: #e25b49;
+@GREEN: #50ad37;
+@BLUE: #50adff;
+@GREY: #303030; 
 
 
-
+/** Standard element style**/
 body {
 	background-attachment: fixed;
 	background-color: @DARKGREY;
@@ -59,6 +59,8 @@ h1 {
 h2 {
   font-family: 'Open Sans', sans-serif;
 }
+
+/** General purpose Position element **/
 .left {
 	float: left;
 }
@@ -81,6 +83,7 @@ h2 {
 	-webkit-transform:rotate(-90deg);
 	transform: rotate(-90deg);
 }
+/** Custom element style **/
 #Welcome {
 	background-color: transparent;
 	color: white;
@@ -98,6 +101,19 @@ h2 {
 .first {
 	margin-top: 380px;
 }
+#legal {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+	p {
+		margin: 0px;
+	}
+}
+/* Slide mangagement Section */
+
+@SlidePadding: 20px;
 .slide-content {
 	background-color: white;
 	display: inline-block;
@@ -106,7 +122,7 @@ h2 {
 	min-height: 553px;
 	min-height: 85vh;
 	overflow: hidden;
-	padding: 20px 20px 20px 20px;
+	padding: @SlidePadding @SlidePadding @SlidePadding @SlidePadding;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -125,136 +141,6 @@ h2 {
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%,-50%);
-	}
-}
-button.left-arrow {
-	border-bottom: 60px solid transparent;
-	border-right: 60px solid black;
-	border-top: 60px solid transparent;
-	left: 0%;
-	opacity: 0.5;
-	top:50%;
-	transform: translate(0%,-50%);
-	&:hover {
-		opacity: 0.3;
-	}
-	&:active {
-		border-right: 60px solid @ORANGE;
-		opacity: 0.5;
-	}
-}
-button.right-arrow {
-	border-bottom: 60px solid transparent;
-	border-left: 60px solid black;
-	border-top: 60px solid transparent;
-	opacity: 0.5;
-	right: 0%;
-	top: 50%;
-	transform: translate(0%,-50%);
-	&:hover {
-		opacity: 0.3;
-	}
-	&:active {
-		border-left: 60px solid @ORANGE;
-		opacity: 0.7;
-	}
-}
-.up-arrow {
-	border-bottom: 15px solid white;
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	height: 0px;
-	left: 50%;
-	opacity: 0.7;
-	position: relative;
-	top:30%;
-	transform: translate(-50%,0%);
-	width: 0px;
-	&:hover {
-		border-bottom-color: @ORANGE;
-		opacity: 1;
-	}
-}
-.down-arrow {
-	border-left: 15px solid transparent;
-	border-right: 15px solid transparent;
-	border-top: 15px solid @DARKGREY;
-	height: 0px;
-	left: 50%;
-	opacity: 0.7;
-	position: relative;
-	top:30%;
-	transform: translate(-50%,0%);
-	width: 0px;
-	&:hover {
-		border-top-color: @ORANGE;
-		opacity: 1;
-	}
-}
-#scroll-bar-diapo {
-	background-color: white;
-	box-shadow: 0px 25px 25px 0px white;
-	margin-left: 20%;
-	margin-left: calc(~'10% + 122.5px');
-	padding-right: 20%;
-	padding-right: calc(~'10% + 122.5px');
-	position: absolute;
-	width: 60%;
-	width: calc(~'80% - 220px');
-	.round {
-		border-color: black;
-		border-radius: 50px;
-		border-style: solid;
-		border-width: 5px;
-		cursor: pointer;
-		display: inline-flex;
-		height: 75px;
-		margin: 10px;
-		opacity: 0.8;
-		padding: 0;
-		position: relative;
-		width: 75px;
-		&:hover {
-			border-color: @RED;
-			opacity: 0.7;
-		}
-	}
-	.selected {
-		border-color: @RED;
-		opacity: 1;
-	}
-	button.round {
-		&:active {
-			opacity: 0.7;
-		}
-	}
-}
-#angle-bar-diapo {
-	border-left: 15px solid black;
-	border-top-left-radius: 50px;
-	border-top: 15px solid black;
-	bottom: 0;
-	display: inline-block;
-	height: 50%;
-	left: 10%;
-	margin-left: 107.5px;
-	position: absolute;
-	width: 40%;
-}
-#nav-bar-diapo {
-	background-color: white;
-	border: 15px solid black;
-	position: relative;
-	width: auto;
-}
-#legal {
-	height: 50px;
-	line-height: 50px;
-	text-align: center;
-	vertical-align: middle;
-	width: 100%;
-	p {
-		margin: 0px;
 	}
 }
 .slide-left {
@@ -321,6 +207,131 @@ button.right-arrow {
 	right: -9999px;
 	width: 463px;
 }
+
+button.left-arrow {
+	border-bottom: 60px solid transparent;
+	border-right: 60px solid black;
+	border-top: 60px solid transparent;
+	left: 0%;
+	opacity: 0.5;
+	top:50%;
+	transform: translate(0%,-50%);
+	&:hover {
+		opacity: 0.3;
+	}
+	&:active {
+		border-right: 60px solid @ORANGE;
+		opacity: 0.5;
+	}
+}
+button.right-arrow {
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid black;
+	border-top: 60px solid transparent;
+	opacity: 0.5;
+	right: 0%;
+	top: 50%;
+	transform: translate(0%,-50%);
+	&:hover {
+		opacity: 0.3;
+	}
+	&:active {
+		border-left: 60px solid @ORANGE;
+		opacity: 0.7;
+	}
+}
+.up-arrow {
+	border-bottom: 15px solid white;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	height: 0px;
+	left: 50%;
+	opacity: 0.7;
+	position: relative;
+	top:30%;
+	transform: translate(-50%,0%);
+	width: 0px;
+	&:hover {
+		border-bottom-color: @ORANGE;
+		opacity: 1;
+	}
+}
+.down-arrow {
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid @DARKGREY;
+	height: 0px;
+	left: 50%;
+	opacity: 0.7;
+	position: relative;
+	top:30%;
+	transform: translate(-50%,0%);
+	width: 0px;
+	&:hover {
+		border-top-color: @ORANGE;
+		opacity: 1;
+	}
+}
+
+/* People Management section */
+#scroll-bar-diapo {
+	background-color: white;
+	box-shadow: 0px 25px 25px 0px white;
+	margin-left: 20%;
+	margin-left: calc(~'10% + 122.5px');
+	padding-right: 20%;
+	padding-right: calc(~'10% + 122.5px');
+	position: absolute;
+	width: 60%;
+	width: calc(~'80% - 220px');
+	.round {
+		border-color: black;
+		border-radius: 50px;
+		border-style: solid;
+		border-width: 5px;
+		cursor: pointer;
+		display: inline-flex;
+		height: 75px;
+		margin: 10px;
+		opacity: 0.8;
+		padding: 0;
+		position: relative;
+		width: 75px;
+		&:hover {
+			border-color: @RED;
+			opacity: 0.7;
+		}
+	}
+	.selected {
+		border-color: @RED;
+		opacity: 1;
+	}
+	button.round {
+		&:active {
+			opacity: 0.7;
+		}
+	}
+}
+
+#angle-bar-diapo {
+	border-left: 15px solid black;
+	border-top-left-radius: 50px;
+	border-top: 15px solid black;
+	bottom: 0;
+	display: inline-block;
+	height: 50%;
+	left: 10%;
+	margin-left: 107.5px;
+	position: absolute;
+	width: 40%;
+}
+#nav-bar-diapo {
+	background-color: white;
+	border: 15px solid black;
+	position: relative;
+	width: auto;
+}
+
 .diapo-text {
 	border-left: 15px solid black;
 	display: block;
@@ -363,6 +374,8 @@ button.right-arrow {
 	transition-timing-function: cubic-bezier(.42, 0, .58, 1);
 	visibility: hidden;
 	width: 100%;
+	margin-top: -@SlidePadding;
+	margin-left: -@SlidePadding;
 }
 #people-exit.opened {
 	background-color: @DARKGREY;
@@ -520,13 +533,8 @@ a {
 		}
 	}
 }
-#mail {
-	background-image: url(/pics/mail.png);
-	background-repeat:no-repeat;
-	background-size: contain;
-	display: inline-block;
-	vertical-align: bottom;
-}
+
+/* Navigation style */
 #HorzTopNav {
 	background-color: white;
 	box-shadow: 0px 5px 5px 0px @GREY;
@@ -671,6 +679,13 @@ li {
 	display: inline-block;
 	vertical-align: bottom;
 }
+#mail {
+	background-image: url(/pics/mail.png);
+	background-repeat:no-repeat;
+	background-size: contain;
+	display: inline-block;
+	vertical-align: bottom;
+}
 #Team {
 	background-image: url(/pics/contact.png);
 	background-repeat:no-repeat;
@@ -790,6 +805,8 @@ li {
 #PublicMenu{
 	display: none;
 }
+
+/* Diaporama section */
 #diaporama {
 	display: inline-block;
 	height: 80%;
@@ -812,6 +829,8 @@ li {
 .diapo.in {
 	right: 0px;
 }
+
+/* Animation */
 @-webkit-keyframes fadeIn {
 		to { opacity: 1;
 	}
