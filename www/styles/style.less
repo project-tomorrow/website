@@ -15,6 +15,8 @@ body {
 	background-repeat: no-repeat;
 	background-size:1280px 1148px;
 	margin: 0;
+	overflow-x: hidden;
+
 }
 section {
 	color: @DARKGREY;
@@ -83,15 +85,14 @@ h2 {
 	background-color: transparent;
 	color: white;
   font: normal 8em  'Signika Negative';
-	min-height: 0px;
 	position: fixed;
+	top: 180px;
 	right: 50%;
 	transform: translate(50%);
 	width: 650px;
 	z-index: -1;
 	div.middle-left {
-		font-size: 6cm;
-    font: normal 220px 'Stalemate', cursive;
+    font: normal 2.7cm 'Stalemate', cursive;
 		text-align: center;
 	}
 }
@@ -106,7 +107,7 @@ h2 {
 	min-height: 553px;
 	min-height: 85vh;
 	overflow: hidden;
-	padding: 20px 20px 20pc 20px;
+	padding: 20px 20px 20px 20px;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -195,12 +196,12 @@ button.right-arrow {
 	background-color: white;
 	box-shadow: 0px 25px 25px 0px white;
 	margin-left: 20%;
-	margin-left: calc(10% + 122.5px);
+	margin-left: calc(~'10% + 122.5px');
 	padding-right: 20%;
-	padding-right: calc(10% + 122.5px);
+	padding-right: calc(~'10% + 122.5px');
 	position: absolute;
 	width: 60%;
-	width: calc(80% - 220px);
+	width: calc(~'80% - 220px');
 	.round {
 		border-color: black;
 		border-radius: 50px;
@@ -260,6 +261,7 @@ button.right-arrow {
 .slide-left {
 	display: inline-block;
 	margin-right: 10px;
+	width: 45%;
 	max-width: 880px;
 	padding-left: 10px;
 	text-align: left;
@@ -553,11 +555,6 @@ a {
 			top: 0;
 			transition: 0.4s;
 			width: 100%;
-		}
-		&:hover {
-			after {
-				width: 100%;
-			}
 		}
 	}
 	li.selected {
