@@ -48,7 +48,7 @@ function shuffle(array, callback) {
 global.TitleNavBar = ['Home' 	,'Workflow' 	 ,'Project'		 ,'Team'		 ,'Contact'	];
 global.RefNavBar 	 = ['/'    	,'/workflow'	 ,'/project' 	 ,'/people'  ,'/contact'	];
 global.TextNavBar  = [''     	,'Méthodologie','Les projets','L\'équipe','Contact'	];
-global.ColorNavBar = ['black'	,'yellow'			 ,'green'			 ,'blue'     ,'red'    	];
+global.ColorNavBar = ['black'	,'orange'			 ,'green'			 ,'blue'     ,'red'    	];
 
 //------------------------------------------------------------------------------
 //													Router Part

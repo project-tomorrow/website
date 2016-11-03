@@ -606,6 +606,20 @@ a {
 	background-color: @YELLOW;
 	color: white;
 }
+#orangeNav {
+	&:hover:after {
+		border-top: 7px solid @ORANGE;
+		vertical-align: bottom;
+	}
+	&:active {
+		background-color: @ORANGE;
+		color: white;
+	}
+}
+#orangeNav.selected {
+	background-color: @ORANGE;
+	color: white;
+}
 #blueNav {
 	&:hover:after {
 		border-top: 7px solid @BLUE;
