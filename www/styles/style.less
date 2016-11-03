@@ -277,15 +277,16 @@ button.right-arrow {
 
 /* People Management section */
 #scroll-bar-diapo {
-	background-color: white;
-	box-shadow: 0px 25px 25px 0px white;
-	margin-left: 20%;
+	//background-color: white;
+	//box-shadow: 0px 25px 25px 0px white;
+	/*margin-left: 20%;
 	margin-left: calc(~'10% + 122.5px');
 	padding-right: 20%;
-	padding-right: calc(~'10% + 122.5px');
-	position: absolute;
-	width: 60%;
-	width: calc(~'80% - 220px');
+	padding-right: calc(~'10% + 122.5px');*/
+	position: fixed;
+	width: 100%;
+	//width: calc(~'80% - 220px');
+	z-index: 25;
 	.round {
 		border-color: black;
 		border-radius: 50px;
@@ -299,13 +300,11 @@ button.right-arrow {
 		padding: 0;
 		position: relative;
 		width: 75px;
+		overflow: hidden;
+		background-color: white;
 		&:hover {
 			border-color: @RED;
 			opacity: 0.7;
-		}
-		img {
-			max-height: calc(~'100% - 20px');
-			max-width: calc(~'100% - 20px');
 		}
 	}
 	.selected {
@@ -342,9 +341,7 @@ button.right-arrow {
 	border-left: 15px solid black;
 	display: block;
 	height: 80%;
-	margin-bottom: -130px;
 	margin-left: 107.5px;
-	margin-top: -280px;
 	min-width: 300px;
 	padding-left: 150px;
 	padding-right: 50px;
@@ -356,12 +353,10 @@ button.right-arrow {
 	border: 15px solid black;
 	display: inline-block;
 	height: 200px;
-	margin-bottom: 100px;
-	margin-top: 50px;
+	margin-bottom: -120px;
 	position: relative;
 	position: sticky;
 	text-align: center;
-	top: 10%;
 	width: 200px;
 	z-index: 30;
 	img {
@@ -833,11 +828,13 @@ li {
 
 /* Diaporama section */
 #diaporama {
+	.slide-content;
 	display: inline-block;
-	height: 80%;
 	overflow-y: scroll;
 	width: 80%;
-	visibility: hidden;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 120px;
 }
 .diapo {
 	display: inline-block;

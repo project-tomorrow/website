@@ -2,7 +2,7 @@
 
   function GoToSlide(num){
 //    diaporama.scrollTo(0,Sladelist[num].offsetTop);
-    var startY = diaporama.scrollTop;
+    var startY = window.pageYOffset;
     var stopY = Sladelist[num].offsetTop;
     var distance = stopY > startY ? stopY - startY : startY - stopY;
     if (distance < 50) {
@@ -15,19 +15,19 @@
     var timer = 0;
     if (stopY > startY) {
         for ( var i=startY; i<stopY; i+=step ) {
-            setTimeout(function(){diaporama.scrollTop+= step;}, timer * speed);
+            setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
             leapY += step; if (leapY > stopY) leapY = stopY; timer++;
         } return;
     }
     for ( var i=startY; i>stopY; i-=step ) {
-        setTimeout(function(){diaporama.scrollTop-= step;}, timer * speed);
+        setTimeout("window.scrollTo(0, "+leapY+")", timer * speed);
         leapY -= step; if (leapY < stopY) leapY = stopY; timer++;
     }
   }
 
   function detectFocused(){
     var i=0;
-    for (;(Sladelist[i].offsetTop+Sladelist[i].offsetHeight) < (diaporama.scrollTop+150);) i++;
+    for (;(Sladelist[i].offsetTop+Sladelist[i].offsetHeight) < (window.pageYOffset+150);) i++;
     Buttonlist[SladeNumber].className = "round";
     Buttonlist[i].classList.add("selected");
     Buttonlist[SladeNumber].children[0].src = "/diapo-nav/" + (SladeNumber+1) + ".png";
@@ -35,9 +35,9 @@
     SladeNumber=i;
   }
 
-  var diaporama = document.getElementById("diaporama");
   var Sladelist = document.getElementsByClassName("diapo");
   var Buttonlist = document.getElementById("scroll-bar-diapo").getElementsByClassName("round");
+  window.addEventListener("scroll",detectFocused);
   var i = 0;
   var SladeNumber=0;
 </script>
