@@ -16,7 +16,7 @@ body {
 	background-size:1280px 1148px;
 	margin: 0;
 	overflow-x: hidden;
-
+	-webkit-font-smoothing: antialiased;
 }
 section {
 	color: @DARKGREY;
@@ -539,12 +539,13 @@ a {
 }
 
 /* Navigation style */
+@HORZNAVHEIGHT : 40px;
 #HorzTopNav {
 	background-color: white;
-	box-shadow: 0px 5px 5px 0px @GREY;
+	box-shadow: 0px 0px 2px 0px @GREY;
 	color: @GREY;
 	font-family:Arial, Helvetica, sans-serif;
-	height:40px;
+	height:@HORZNAVHEIGHT;
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	text-align: right;
@@ -666,10 +667,10 @@ a {
 	background-repeat:no-repeat;
 	background-size: contain;
 	display: inline-block;
-	height: 40px;
+	height: @HORZNAVHEIGHT;
 	padding-left: 10;
 	vertical-align: bottom;
-	width: 40px;
+	width: @HORZNAVHEIGHT;
 }
 #home.selected {
 	background-color: @DARKGREY;
@@ -825,16 +826,13 @@ li {
 #PublicMenu{
 	display: none;
 }
-
 /* Diaporama section */
 #diaporama {
 	.slide-content;
 	display: inline-block;
 	overflow-y: scroll;
 	width: 80%;
-	padding-left: 10%;
-	padding-right: 10%;
-	padding-top: 120px;
+	padding: 120px 10% 0 10%;
 }
 .diapo {
 	display: inline-block;
@@ -853,23 +851,79 @@ li {
 .diapo.in {
 	right: 0px;
 }
+/* Project Part */
+#ProjectMenu{
+	top:@HORZNAVHEIGHT;
+	right: 0px;
+	height: @HORZNAVHEIGHT;
+	z-index: 40;
+	position: fixed;
+	display: flex;
+	box-shadow: 0px 0px 2px 0px @GREY;
+	#Corner{
+		border: @HORZNAVHEIGHT/2 solid white;
+		display: inline-block;
+		&::before{
+			border: @HORZNAVHEIGHT/2 solid white;
+			border-bottom-color: transparent;
+			border-left-color: transparent;
+			content: '';
+			position: absolute;
+			top: 0;
+			left:  -@HORZNAVHEIGHT;
+		}
+	}
+	#EndCorner{
+		width: 60px;
+		height: @HORZNAVHEIGHT;
+		background-color: white;
+		display: inline-block;
+	}
+	.projectNavItem{
+		background-color: white;
+		display: inline-block;
+		height: @HORZNAVHEIGHT;
+		padding-left: 10px;
+		padding-right: 10px;
+		line-height: @HORZNAVHEIGHT;
+		vertical-align: middle;
+		transition: .2s;
+		cursor: pointer;
+		&:hover{
+			background-color: @GREEN;
+			color: white;
+		}
+	}
+	.selected{
+		background-color: @GREEN;
+		color: white;
+	}
+}
+#ProjectPage{
+	padding-top: 80px;
+	height: 100%;
+	width:100%;
+	position:relative;
+	overflow-x:hidden;
+	.projectSlide{
+		.slide-content;
+		position:absolute;
+		bottom: 0;
+	}
+}
 
 /* Animation */
 @-webkit-keyframes fadeIn {
-		to { opacity: 1;
-	}
+		to { opacity: 1;}
 }
 @-webkit-keyframes 	fadeOut {
-		to { opacity: 0;
-	}
+		to { opacity: 0;}
 }
 @keyframes 	fadeIn {
-		to { opacity: 1;
-	}
+		to { opacity: 1;}
 }
 @keyframes	fadeOut {
-		to { opacity: 0;
-	}
+		to { opacity: 0;}
 }
 .fade-el {
 	display: none;

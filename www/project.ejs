@@ -4,15 +4,31 @@
 	</head>
 <body>
 	<% include partials/navBar.ejs %>
-	<section>
-			<%# HACK: very poor and bad code below : do a proper script %>
+	<div id=ProjectMenu>
+		<div id="Corner"></div>
+		<% for(var i=0; i<ListeProject.length; i++) {%>
+			<div class="projectNavItem <%if(i==0){%> selected <%}%>"
+					 onclick="bisou(<%=i%>,this)"><a>Item <%= i %></a></div>
+		<% } %>
+		<div id="EndCorner"></div>
+	</div>
+	<section id="ProjectPage">
 			<% for(var i=0; i<ListeProject.length; i++) {%>
-				<div class="slide-content">
+				<div class="projectSlide" style="left:<%- i*100 %>%">
 					<%- include('projects/' + ListeProject[i])%>
 				</div>
 			<% } %>
 	</section>
 	<% include partials/footer.ejs %>
 </body>
+<script>
+var old = document.getElementsByClassName("projectNavItem")[0];
+var bisou = function(num,el){
+	document.getElementById('ProjectPage').scrollLeft=num*window.innerWidth;
+	old.classList.remove("selected")
+	old = el;
+	el.classList.add("selected");
+}
+</script>
 <% include script/fadeList.js %>
 </html>
