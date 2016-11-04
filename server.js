@@ -77,6 +77,7 @@ exp.get('/contact', function (req, res){
 exp.get('/project', function (req, res){
 	fileListToEjs('www/projects',function(files){
 		res.render('../www/project.ejs',{ListeProject : files,
+																		 ProjectPageTitle : ["Présentation","Avancement","Équipe","Partenaire"],
 																	 	 Title : TitleNavBar[2]
 																  	})
 	})
