@@ -2,19 +2,12 @@
 	<head>
 		<% include partials/head.ejs %>
 	</head>
-<body>
+<body  onscroll="backpo()">
 	<% include partials/navBar.ejs %>
 	<section>
 		<div id="Welcome">
-			<div class="middle-right">ProTo</div>
-			<div class="middle-left"><span class="fade-el"> arque</span>
-				 			  								<span class="fade-el">supien</span>
-																<span class="fade-el">ïtien</span>
-				 												<!--<span class="fade-el">zaure</span>
-				 												<span class="fade-el">zoaire</span>-->
-                                <span class="fade-el">type</span>
-                                <span class="fade-el">sapiens</span>
-			</div>
+			<img src="ProToLogo.svg"></img>
+			<div>ProTo</div>
 		</div>
 
 		<% for(var i=0; i<ListSlide.length; i++) {%>
@@ -36,13 +29,17 @@
 		<% } %>
 	</section>
 	<% include partials/footer.ejs %>
-</body>
-<script>
-	function start(){
-		fadeTab();
+	<script>
+	var bp = 0;
+	var temPo = 0;
+	function backpo() {
+		if(temPo < document.body.scrollTop)
+				document.body.style.backgroundPosition = ["50% "+ --bp+"px"];
+		else
+			document.body.style.backgroundPosition = ["50% "+ ++bp+"px"];
+		temPo = document.body.scrollTop;
 	}
-	onload=start;
-</script>
-<% include script/fadeList.js %>
-<% include script/slide.js %>
+	</script>
+	<% include script/slide.js %>
+</body>
 </html>
