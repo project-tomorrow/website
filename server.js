@@ -45,10 +45,10 @@ function shuffle(array, callback) {
 
 //Horizontal navBar global var
 //------------------------------------------------------------------------------
-global.TitleNavBar = ['Home' 	,'Workflow' 	 ,'Project'		 ,'Team'		 ,'Contact'	];
-global.RefNavBar 	 = ['/'    	,'/workflow'	 ,'/project' 	 ,'/people'  ,'/contact'];
-global.TextNavBar  = [''     	,'Le Workflow' ,'Les projets','L\'équipe','Contact'	];
-global.ColorNavBar = ['black'	,'orange'			 ,'green'			 ,'blue'     ,'red'    	];
+global.TitleNavBar = ['Home' 	,'Workflow' 	 ,'Project'		 ,'About Us'		 	,'Contact'	];
+global.RefNavBar 	 = ['/'    	,'/workflow'	 ,'/project' 	 ,'/people'  			,'/contact'	];
+global.TextNavBar  = [''     	,'Le Workflow' ,'Les projets','Nous connaitre','Contact'	];
+global.ColorNavBar = ['black'	,'orange'			 ,'green'			 ,'blue'     			,'red'    	];
 
 //------------------------------------------------------------------------------
 //													Router Part
