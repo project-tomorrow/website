@@ -112,6 +112,15 @@ h2 {
 	padding:5vh;
 	display: inherit;
 }
+.central-text{
+	padding: 40px;
+	width:70%;
+	max-width:1250px;
+	left:50%;
+	text-align: justify;
+	position:relative;
+	transform:translateX(-50%)
+}
 .kindOfTab{
 	.column{
 		display: inline-block;
@@ -171,6 +180,11 @@ h2 {
 		font-size: 1.1em;
 		text-align: justify;
 	}
+	li {
+		font-family: 'Open Sans', sans-serif;
+		text-rendering: optimizeLegibility;
+		font-size: 1.1em;
+	}
 	img {
 		left: 50%;
 		max-height: 100%;
@@ -178,10 +192,17 @@ h2 {
 		top: 50%;
 		transform: translate(-50%,-50%);
 	}
+	.central-text{
+		width:70%;
+		max-width:1250px;
+		left:50%;
+		position:relative;
+		transform:translateX(-50%)
+	}
 	a {
-		position: absolute;
-		margin-left: .5em;
-		margin-right: .5em;
+		position: relative;
+		//margin-left: .5em;
+		//margin-right: .5em;
 		text-decoration: none;
 		font-weight: bold;
 		color: @BLUE;
@@ -987,6 +1008,28 @@ li {
 			height:@MainWindowH;
 			width: 100%;
 			display: inline-block;
+		}
+		a {
+			position: relative;
+			//margin-left: .5em;
+			//margin-right: .5em;
+			text-decoration: none;
+			font-weight: bold;
+			color: @BLUE;
+			&::after{
+				transition: 0.4s;
+				transition-property: all;
+				content: '';
+				left: 0;
+				position: absolute;
+				bottom: -.2em;
+				width: 0;
+				border-bottom: .3em solid @BLUE;
+				vertical-align: bottom;
+			}
+			&:hover:after{
+				width: 100%
+			}
 		}
 		.bottomWindow{
 			width: 100%;
