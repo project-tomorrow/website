@@ -540,6 +540,9 @@ button.right-arrow {
 			margin: 0;
 			vertical-align: bottom;
 		}
+		a::after {
+			display: none;
+		}
 	}
 	.bio {
 		height: auto;
@@ -549,6 +552,9 @@ button.right-arrow {
 		top: 0;
 		visibility: visible;
 		width: auto;
+		p {
+			position: relative;
+		}
 	}
 	.status {
 		display: block;
@@ -657,7 +663,7 @@ a {
 			left: 0;
 			position: absolute;
 			top: 0;
-			transition: 0.4s;
+			transition: 0.2s;
 			width: 100%;
 		}
 	}
