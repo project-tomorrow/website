@@ -6,18 +6,22 @@
 	<% include partials/navBar.ejs %>
 	<section>
 		<div class="slide-content">
-      <h1>Parlez-nous !</h1>
+      	<h1>Parlez-nous !</h1>
+			<p>
+				ProTo recherche des entreprises et des écoles partenaires pour enrichir et développer les projets d'innovation. Contactez-nous si vous souhaitez nous rejoindre !  
+				De même, si vous souhaitez rejoindre l'association, faire un don ou simplement en savoir plus sur ProTo, n'hésitez pas à nous le signaler en complétant le formulaire ci-dessous. Nous serons ravis de vous répondre.
+        	</p>
 			<form name="contactForm" id="contactForm" action="/contact/send" method="post" onsubmit="return (validateForm())"/>
 				<fieldset>
 					<legend> A propos de vous </legend>
 		      <input class="small" type="text" name="firstName" placeholder="Prénom" value="" maxlength="40" onblur="checkVoid(this)"required/>
 		      <input class="small" type="text" name="lastName" placeholder="Nom" value="" maxlength="40" onblur="checkVoid(this)"required/>
-		      <input type="email" name="mail" value="" placeholder="votre e-mail" onblur="checkMail()" required/>
+		      <input type="email" name="mail" value="" placeholder="Votre e-mail" onblur="checkMail()" required/>
 		    </fieldset>
 				<fieldset>
 					<legend> Votre message </legend>
 	        <input type="text" name="object" value="" maxlength="50" placeholder="Objet du Message" onblur="checkVoid(this)" required/>
-	        <textarea class="large" name="message" rows="8" cols="144" placeholder="Dites nous tout !" maxlength="500" onblur="checkVoid(this)" required></textarea>
+	        <textarea class="large" name="message" rows="8" cols="144" placeholder="Dites-nous tout !" maxlength="500" onblur="checkVoid(this)" required></textarea>
 				</fieldset>
 	      <input id="buttonMail" type="submit" name="send"></button>
 		  </form>
