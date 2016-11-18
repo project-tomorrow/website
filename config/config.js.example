@@ -7,7 +7,22 @@ config.picsFolder   = rootFolder + '/www/pics';
 config.cssFolder    = rootFolder + '/www/styles';
 config.scriptFolder = rootFolder + '/www/script';
 
-config.logLevel = 'info';
+config.logLevel = 'error';
+
+config.contactMail = 'contact@project-tomorrow.fr';
+
+config.transporterParam = {
+  host: 'mail.kapupa.fr', // hostname
+  secure: false, // use SSL
+  port: 587, // port for secure SMTP
+  auth: {
+    user: 'proto-website@kapupa.fr',
+    pass: 'aV9xQk~f=v_|NuA'
+  },
+  tls: {
+      rejectUnauthorized: false
+  }
+};
 
 config.info = function(callback){
 //TODO : add assert and beautiful tree

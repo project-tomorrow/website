@@ -4,6 +4,7 @@
 @GREEN:    #50ad37;
 @BLUE:     #409def;
 @GREY:     #303030;
+@LIGHTGREY:#EEEEEE;
 @YELLOW:   #fcdc12;
 
 /** Standard element style**/
@@ -14,6 +15,8 @@ body {
 	background-position: 50% 0;
 	background-repeat: no-repeat;
 	//background-size:1280px 1148px;
+	font-family: 'Open Sans', sans-serif;
+	text-rendering: optimizeLegibility;
 	margin: 0;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
@@ -632,6 +635,70 @@ a {
 			background-image: url(/pics/home-hover.png);
 		}
 	}
+}
+/* Contact Form style */
+#contactForm {
+	width:0px;
+	position: relative;
+	left: calc(~'50% - 200px');
+	fieldset {
+	 padding:20px 20px 20px 20px;
+	 margin-bottom:10px;
+	 border:2px solid @GREY;
+	 //width: 1000px;
+	 border-radius:10px;
+	 text-align: left;
+	}
+	legend {
+	// color:#DF3F3F;
+	 font-weight:bold
+	}
+	input, textarea {
+	 padding:3px;
+	 margin: 10px;
+	 border: 1px solid @GREY;
+	 border-radius:10px;
+	 width:400px;
+	 background-color: white;//@LIGHTGREY;
+	 display: inline-block;
+	 box-shadow: none;
+	 font-family: 'Open Sans', sans-serif;
+	 &.false {
+		 border-color: @RED;
+		 box-shadow: 0px 0px 3px 0px @RED;
+	 }
+	 &.true {
+		 border-color: @GREEN;
+		 box-shadow: 0px 0px 3px 0px @GREEN;
+	 }
+	}
+	input {
+		height: 40px;
+	}
+	.small {
+		width: 150px;
+	}
+	.large {
+		width: 600px;
+	}
+	input[type=submit] {
+	 width:100px;
+	 margin-left:5px;
+	 background-color: @GREY;
+	 color: white;
+	 box-shadow:none;
+	 cursor:pointer;
+ }
+ #buttonMail{
+	 &:hover {
+		 background-color: white;
+		 color: @DARKGREY;
+	 }
+	 &:active {
+		 background-color: white;
+		 color: @DARKGREY;
+	 }
+ }
 }
 
 /* Navigation style */

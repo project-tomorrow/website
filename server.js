@@ -14,7 +14,8 @@ var bunyan = require('bunyan'),
 		});
 var assert = require('assert');
 var colors = require('colors');
-
+var nodemailer = require('nodemailer'),
+		bodyParser = require('body-parser');
 
 //Static Folder
 //------------------------------------------------------------------------------
@@ -99,6 +100,36 @@ exp.get('*', function (req, res){
 //------------------------------------------------------------------------------
 //										     Server Management Part
 //------------------------------------------------------------------------------
+
+//mail transporter
+exp.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+exp.post('/contact/send', function(req, res) {
+  var transporter = nodemailer.createTransport(config.transporterParam);
+  var mailOptions = {
+    from: req.body.mail,
+    to: config.contactMail,
+    subject: 'Contact via kapupa.fr : '+req.body.object,
+    text: req.body.firstName + ' ' + req.body.lastName + '<' + req.body.mail +
+          '> nous adresse ce message : ' + req.body.message + ' ' ,
+    html: '<ul><li>Nom : ' + req.body.lastName + '</li><li>Prénom : ' +
+          req.body.firstName + '</li><li>Mail : ' + req.body.mail +
+          '</li><li>Message : ' + req.body.message + '</li></ul>'
+  };
+  transporter.sendMail(mailOptions, function(error, info) {
+    if (error) {
+      log.error(error); // TODO: redirection to error page or popup
+      res.redirect('/');
+    } else { //TODO: popup confirming that the request has been sent
+      log.info(' Node mailer : ' + info.response);
+      res.redirect('/');
+    }
+  });
+});
+
+//web server
 exp.listen(conf.listenPort, conf.listenInterface,function(){
 	conf.info(function(fileconfig){log.debug(fileconfig)});
 	log.info( 'Server running using port : '
