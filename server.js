@@ -46,10 +46,10 @@ function shuffle(array, callback) {
 
 //Horizontal navBar global var
 //------------------------------------------------------------------------------
-global.TitleNavBar = ['Home' 	,'Workflow' 	 ,'Project'		 ,'About Us'		 	,'Contact'	];
-global.RefNavBar 	 = ['/'    	,'/workflow'	 ,'/project' 	 ,'/people'  			,'/contact'	];
-global.TextNavBar  = [''     	,'Le Workflow' ,'Les projets','Nous connaitre','Contact'	];
-global.ColorNavBar = ['black'	,'orange'			 ,'green'			 ,'blue'     			,'red'    	];
+global.TitleNavBar = ['Home' 	,'Les Projets' ,'Les Ateliers' ,'About Us','Contact'	];
+global.RefNavBar 	 = ['/'    	,'/project'	 	 ,'/workshop' 	 ,'/people' ,'/contact'	];
+global.TextNavBar  = [''     	,'Les Projets' ,'Les Ateliers' ,'Nous'		,'Contact'	];
+global.ColorNavBar = ['black'	,'green'			 ,'orange'			 ,'blue'    ,'red'    	];
 
 //------------------------------------------------------------------------------
 //													Router Part
@@ -79,7 +79,7 @@ exp.get('/project', function (req, res){
 	fileListToEjs('www/projects',function(files){
 		res.render('../www/project.ejs',{ListeProject : files,
 																		 ProjectPageTitle : ["Présentation","Avancement","Équipe","Partenaire"],
-																	 	 Title : TitleNavBar[2]
+																	 	 Title : TitleNavBar[1]
 																  	})
 	})
 });
@@ -87,7 +87,14 @@ exp.get('/project', function (req, res){
 exp.get('/workflow', function (req, res){
 	res.render('../www/workflow.ejs', {	ListDiapo : fs.readdirSync('www/workflow'),
 																	 		LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
-																 	 		Title : TitleNavBar[1]
+																 	 		Title : TitleNavBar[2]
+															  		})
+});
+
+exp.get('/workshop', function (req, res){
+	res.render('../www/workshop.ejs', {	ListDiapo : fs.readdirSync('www/workflow'),
+																	 		LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
+																 	 		Title : TitleNavBar[2]
 															  		})
 });
 
