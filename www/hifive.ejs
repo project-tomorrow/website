@@ -6,8 +6,8 @@
 	<% include partials/navBar.ejs %>
 	<div id=ProjectMenu>
 		<div id="Corner"></div>
-		<%# for(var i=0; i<ListeProject.length; i++) {%>
-		<% for(var i=0; i<1; i++) {%>
+		<% for(var i=0; i<ListeProject.length; i++) {%>
+		<%# for(var i=0; i<1; i++) {%>
 			<div class="projectNavItem <%if(i==0){%> selected <%}%>"
 					 onclick="bisou(<%=i%>,this)"><a><%- ProjectPageTitle[i] %></a></div>
 		<% } %>

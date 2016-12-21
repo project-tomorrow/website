@@ -46,10 +46,10 @@ function shuffle(array, callback) {
 
 //Horizontal navBar global var
 //------------------------------------------------------------------------------
-global.TitleNavBar = ['Home' 	,'Les Projets' ,'Les Ateliers' ,'About Us','Contact'	];
-global.RefNavBar 	 = ['/'    	,'/project'	 	 ,'/workshop' 	 ,'/people' ,'/contact'	];
-global.TextNavBar  = [''     	,'Les Projets' ,'Les Ateliers' ,'Nous'		,'Contact'	];
-global.ColorNavBar = ['black'	,'green'			 ,'orange'			 ,'blue'    ,'red'    	];
+global.TitleNavBar = ['Home' 	,'Les Projets' ,'Les Ateliers' ,'About Us'       ,'Contact'	];
+global.RefNavBar 	 = ['/'    	,'/project'	 	 ,'/workshop' 	 ,'/people'        ,'/contact'];
+global.TextNavBar  = [''     	,'Les Projets' ,'Les Ateliers' ,'L\'Association' ,'Contact'	];
+global.ColorNavBar = ['black'	,'green'			 ,'orange'			 ,'blue'           ,'red'    	];
 
 //------------------------------------------------------------------------------
 //													Router Part
@@ -76,24 +76,28 @@ exp.get('/contact', function (req, res){
 });
 
 exp.get('/project', function (req, res){
+	res.render('../www/project.ejs',{ Title : TitleNavBar[1]})
+});
+
+exp.get('/workflow', function (req, res){
+	res.render('../www/workflow.ejs', {	ListDiapo : fs.readdirSync('www/workflow'),
+																	 		LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
+																 	 		Title : TitleNavBar[1]
+															  		})
+});
+
+exp.get('/hifive', function (req, res){
 	fileListToEjs('www/projects',function(files){
-		res.render('../www/project.ejs',{ListeProject : files,
+		res.render('../www/hifive.ejs',{ListeProject : files,
 																		 ProjectPageTitle : ["Présentation","Avancement","Équipe","Partenaire"],
 																	 	 Title : TitleNavBar[1]
 																  	})
 	})
 });
 
-exp.get('/workflow', function (req, res){
-	res.render('../www/workflow.ejs', {	ListDiapo : fs.readdirSync('www/workflow'),
-																	 		LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
-																 	 		Title : TitleNavBar[2]
-															  		})
-});
 
 exp.get('/workshop', function (req, res){
-	res.render('../www/workshop.ejs', {	ListDiapo : fs.readdirSync('www/workflow'),
-																	 		LogoDiapo : fs.readdirSync('www/pics/diapo-nav'),
+	res.render('../www/workshop.ejs', {
 																 	 		Title : TitleNavBar[2]
 															  		})
 });

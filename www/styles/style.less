@@ -1,10 +1,10 @@
 @DARKGREY: #212121;
-@ORANGE:   #ffa420;
+@ORANGE:   #fcc512;
 @RED: 	   #e25b49;
 @GREEN:    #50ad37;
 @BLUE:     #409def;
 @GREY:     #303030;
-@LIGHTGREY:#EEEEEE;
+@LIGHTGREY:#eeeeee;
 @YELLOW:   #fcdc12;
 
 /** Standard element style**/
@@ -858,6 +858,7 @@ li {
 		#sharepoint {	background-image: url(/pics/sharepoint-hover.png);}
 		#slack 			{	background-image: url(/pics/slack-hover.png);}
 		#gitlab 		{ background-image: url(/pics/gitlab-hover.png);}
+    #trello 		{ background-image: url(/pics/trello-hover.png);}
 	}
 }
 #Mail {
@@ -897,6 +898,13 @@ li {
 }
 #gitlab {
 	background-image: url(/pics/gitlab.png);
+	background-repeat:no-repeat;
+	background-size: contain;
+	display: inline-block;
+	vertical-align: bottom;
+}
+#trello {
+	background-image: url(/pics/trello.png);
 	background-repeat:no-repeat;
 	background-size: contain;
 	display: inline-block;
@@ -1065,6 +1073,43 @@ li {
 		background-color: @GREEN;
 		color: white;
 	}
+}
+.BigButt{
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin: 20px;
+  padding: 0px;
+  min-width: 260px;
+  min-height: 421px;
+  width: 20%;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.2s;
+  transition-property: all;
+  h1{
+    font-size: 2em;
+  }
+  a{
+    text-decoration: none;
+    color: inherit;
+    margin: 15px;
+    display: inline-table;
+    min-height: 421;
+    &::after{
+      display: none;
+    }
+    &:hover:after{
+      display: none;
+    }
+  }
+  img{
+    position: relative;
+    transform: none;
+    left: auto;
+  }
+  &:hover{
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.6) inset;
+  }
 }
 #ProjectPage{
 	@ProjectPageH : calc(~'100vh - 120px');
