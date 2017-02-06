@@ -125,16 +125,22 @@ h2 {
 	transform:translateX(-50%)
 }
 .kindOfTab{
+  position: relative;
 	.column{
 		display: inline-block;
 		width: 30%;
 		max-width: 400px;
 		padding: 10px;
+    vertical-align: top;
 		&::after{
 			border-top: 7px solid @RED;
 			width: 100%;
 			content: '';
 			display: block;
+      position: absolute;
+      bottom: 0;
+      max-width : 400px;
+      width: 30%;
 		};
 		&::before{
 			border-top: 7px solid @RED;
