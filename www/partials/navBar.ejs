@@ -1,25 +1,40 @@
 <%# Horizontale nav bar %>
-<nav id="HorzTopNav">
-  <a href="/"><div id="home" class="nav-icon left
+<nav id=".HorzTopNav" class="navbar navbar-toggleable-md sticky-top navbar-default">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--a class="navbar-brand" href="/"><div id="home" class="nav-icon left
     <% if(Title==TitleNavBar[0]){ %>
        selected
-    <% } %>  >">
-  </div></a>
-  <ul id="webSiteNav">
-    <% for(var i=1; i<TitleNavBar.length; i++) {%>
-      <a href="<%- RefNavBar[i]%>">
-        <li id="<%- ColorNavBar[i]%>Nav" onclick="this.className='selected'"
+    <% } %>  ">
+  </div--></a-->
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul id=".webSiteNav" class="navbar-nav">
+      <% for(var i=1; i<TitleNavBar.length; i++) {%>
+        <li id=".<%- ColorNavBar[i]%>Nav" onclick="this.className='active'" class="nav-item
           <% if(Title== TitleNavBar[i]){ %>
-              class="selected"
-          <% } %>  >
-          <%- TextNavBar[i] %>
+                active
+          <% } %>  ">
+          <a href="<%- RefNavBar[i]%>">
+            <%- TextNavBar[i] %>
+          </a>
         </li>
-      </a>
-    <% } %>
-  </ul>
+      <% } %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Autres Sites
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="https://git.project-tomorrow.fr">Gitlab</a>
+          <a class="dropdown-item" href="https://project-tomorrow.slack.com">Slack</a>
+          <a class="dropdown-item" href="https://trello.com/protouser">trello</a>
+      </div>
+      </li>
+    </ul>
+  </div>
 </nav>
 
-<%# Burger Menu %>
+<%# Burger Menu
 <nav id="Menu" class="right nav-icon">
   <div id="MenuContainer">
     <div id="PrivateMenu" class="subMenu">
@@ -62,3 +77,4 @@
     </div>
   </div>
 </nav>
+%>
