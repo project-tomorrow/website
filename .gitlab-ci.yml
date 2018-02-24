@@ -1,6 +1,8 @@
 before_script:
         - npm install
-test:
+deploy:
+        only: 
+                - master
         script:
                 - cp config/config.js.example config/config.js
                 - lessc www/styles/style.less www/styles/style.css
