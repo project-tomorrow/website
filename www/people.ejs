@@ -4,23 +4,23 @@
 	</head>
 <body>
 	<% include partials/navBar.ejs %>
-	<section>
-		<div class="slide-content">
-			<%- include('about/us.ejs')%>
-		</div>
-		<div class="slide-content">
-			<%# HACK: very poor and bad code below : do a proper script %>
-			<div id="people-exit" onclick="	document.getElementById('people-exit').className='';
-																	document.getElementsByClassName('vip opened')[0].className='vip';">
-			</div>
-			<% for(var i=0; i<ListePeople.length; i++) {%>
-				<div class="vip" onclick="this.classList.add('opened');
-																	getElementById('people-exit').classList.add('opened')">
-					<%- include('people/' + ListePeople[i])%>
-				</div>
-			<% } %>
-		</div>
-	</section>
+    <div class="container-fluid bg-white">
+        <div class="container">
+            <%- include('about/us.ejs')%>
+            <div class="slide-content">
+                <%# HACK: very poor and bad code below : do a proper script %>
+                <div id="people-exit" onclick="	document.getElementById('people-exit').className='';
+                                                                        document.getElementsByClassName('vip opened')[0].className='vip';">
+                </div>
+                <% for(var i=0; i<ListePeople.length; i++) {%>
+                    <div class="vip" onclick="this.classList.add('opened');
+                                                                        getElementById('people-exit').classList.add('opened')">
+                        <%- include('people/' + ListePeople[i])%>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+	</div>
 	<% include partials/footer.ejs %>
 </body>
 <% include script/fadeList.js %>

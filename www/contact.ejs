@@ -6,7 +6,7 @@
 	<% include partials/navBar.ejs %>
 	<section>
 		<div class="slide-content">
-			<div class="central-text small">
+			<div class="central-text">
       	<h1>Parlez-nous !</h1>
 				<p>
 					ProTo recherche des entreprises et des écoles partenaires pour enrichir et développer les projets d'innovation. Contactez-nous si vous souhaitez nous rejoindre !
@@ -14,23 +14,60 @@
 					De même, si vous souhaitez rejoindre l'association, faire un don ou simplement en savoir plus sur ProTo, n'hésitez pas à nous le signaler en complétant le formulaire ci-dessous. Nous serons ravis de vous répondre.
         </p>
       </div>
-			<form name="contactForm" id="contactForm" action="/contact/send" method="post" onsubmit="return (validateForm())"/>
-				<fieldset>
-					<legend> A propos de vous </legend>
-		      <input class="small" type="text" name="firstName" placeholder="Prénom" value="" maxlength="40" onblur="checkVoid(this)"required/>
-		      <input class="small" type="text" name="lastName" placeholder="Nom" value="" maxlength="40" onblur="checkVoid(this)"required/>
-		      <input type="email" name="mail" value="" placeholder="Votre e-mail" onblur="checkMail()" required/>
-		    </fieldset>
-				<fieldset>
-					<legend> Votre message </legend>
-	        <input type="text" name="object" value="" maxlength="50" placeholder="Objet du Message" onblur="checkVoid(this)" required/>
-	        <textarea class="large" name="message" rows="8" cols="144" placeholder="Dites-nous tout !" maxlength="500" onblur="checkVoid(this)" required></textarea>
-				</fieldset>
-	      <input id="buttonMail" type="submit" name="send"></button>
-		  </form>
+			<!-- Begin MailChimp Signup Form -->
+
+            <div id="mc_embed_signup">
+            <form action="https://project-tomorrow.us14.list-manage.com/subscribe/post?u=e5311bdb4f1929c3ba0458793&amp;id=c70e438286" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+            	<label for="mce-EMAIL">Adresse e-mail  <span class="asterisk">*</span>
+            </label>
+            	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            </div>
+            <div class="mc-field-group">
+            	<label for="mce-FNAME">Prénom </label>
+            	<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
+            </div>
+            <div class="mc-field-group">
+            	<label for="mce-LNAME">Nom </label>
+            	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
+            </div>
+            	<div id="mce-responses" class="clear">
+            		<div class="response" id="mce-error-response" style="display:none"></div>
+            		<div class="response" id="mce-success-response" style="display:none"></div>
+            	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e5311bdb4f1929c3ba0458793_c70e438286" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+            </div>
+            <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text'; /*
+             * Translated default messages for the $ validation plugin.
+             * Locale: FR
+             */
+            $.extend($.validator.messages, {
+                    required: "Ce champ est requis.",
+                    remote: "Veuillez remplir ce champ pour continuer.",
+                    email: "Veuillez entrer une adresse email valide.",
+                    url: "Veuillez entrer une URL valide.",
+                    date: "Veuillez entrer une date valide.",
+                    dateISO: "Veuillez entrer une date valide (ISO).",
+                    number: "Veuillez entrer un nombre valide.",
+                    digits: "Veuillez entrer (seulement) une valeur numérique.",
+                    creditcard: "Veuillez entrer un numéro de carte de crédit valide.",
+                    equalTo: "Veuillez entrer une nouvelle fois la même valeur.",
+                    accept: "Veuillez entrer une valeur avec une extension valide.",
+                    maxlength: $.validator.format("Veuillez ne pas entrer plus de {0} caractères."),
+                    minlength: $.validator.format("Veuillez entrer au moins {0} caractères."),
+                    rangelength: $.validator.format("Veuillez entrer entre {0} et {1} caractères."),
+                    range: $.validator.format("Veuillez entrer une valeur entre {0} et {1}."),
+                    max: $.validator.format("Veuillez entrer une valeur inférieure ou égale à {0}."),
+                    min: $.validator.format("Veuillez entrer une valeur supérieure ou égale à {0}.")
+            });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+            <!--End mc_embed_signup-->
 		</div>
 	</section>
 	<% include partials/footer.ejs %>
 </body>
-<% include script/clientForm.js %>
 </html>
