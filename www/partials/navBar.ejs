@@ -1,13 +1,13 @@
 <%# Horizontale nav bar %>
-<nav id=".HorzTopNav" class="navbar navbar-toggleable-md sticky-top navbar-default">
+<nav id=".HorzTopNav" class="navbar navbar-toggleable-md navbar-expand-lg sticky-top navbar-light bg-light">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!--a class="navbar-brand" href="/"><div id="home" class="nav-icon left
+  <a class="navbar-brand" href="/"><div id="home" class="nav-icon left
     <% if(Title==TitleNavBar[0]){ %>
        selected
     <% } %>  ">
-  </div--></a-->
+  </div></a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul id=".webSiteNav" class="navbar-nav">
       <% for(var i=1; i<TitleNavBar.length; i++) {%>
@@ -15,16 +15,16 @@
           <% if(Title== TitleNavBar[i]){ %>
                 active
           <% } %>  ">
-          <a href="<%- RefNavBar[i]%>">
+          <a class="nav-link" href="<%- RefNavBar[i]%>">
             <%- TextNavBar[i] %>
           </a>
         </li>
       <% } %>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Autres Sites
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="https://git.project-tomorrow.fr">Gitlab</a>
           <a class="dropdown-item" href="https://project-tomorrow.slack.com">Slack</a>
           <a class="dropdown-item" href="https://trello.com/protouser">trello</a>

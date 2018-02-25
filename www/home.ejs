@@ -4,30 +4,16 @@
 	</head>
 <body  onscroll="backpo()">
 	<% include partials/navBar.ejs %>
-	<section>
-		<div id="Welcome">
-			<img src="ProToLogo.svg"></img>
-			<div>ProTo</div>
+    <div id="Welcome">
+        <img src="ProToLogo.svg"></img>
+        <div>ProTo</div>
+    </div>
+	<div class="container-fluid first bg-white">
+	<span class="highlight">Promouvoir l'innovation et l'ouverture.</span>
+		<div class="container">
+    		<%- include('index/' + ListSlide[0])%>
 		</div>
-
-		<% for(var i=0; i<ListSlide.length; i++) {%>
-			<% if(i==0) {%>
-				<div class="slide-content first" id="slide<%=i%>">
-			<% }else{ %>
-				<div class="scroll-up-button-daddy"  id="slide<%=i%>"><div class="scroll-up-button">
-						<a href="#slide<%=i-1%>"><div class="up-arrow"></div></a>
-				</div></div>
-				<div class="slide-content">
-			<% } %>
-					<%- include('index/' + ListSlide[i])%>
-				</div>
-			<% if(i!=(ListSlide.length-1)) {%>
-				<div class="scroll-down-button">
-					<a href="#slide<%=i+1%>"><div class="down-arrow"></div></a>
-				</div>
-			<% } %>
-		<% } %>
-	</section>
+	</div>
 	<% include partials/footer.ejs %>
 	<script>
 	function backpo() {
