@@ -8,8 +8,14 @@
 @YELLOW:   #fcdc12;
 @WHITE:    #ffffff;
 
+@FOOTER_HEIGHT: 60px;
 
 /** Standard element style**/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
 	background-attachment: fixed;
 	background-color: @DARKGREY;
@@ -22,6 +28,7 @@ body {
 	margin: 0;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
+    margin-bottom: @FOOTER_HEIGHT;
 }
 section {
 	color: @DARKGREY;
@@ -31,7 +38,17 @@ section {
 footer {
 	background-color: black;
 	color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: @FOOTER_HEIGHT;
+    line-height: @FOOTER_HEIGHT;
 }
+
+body {
+
+}
+
 /*nav {
 	z-index: 100;
 	ul {
