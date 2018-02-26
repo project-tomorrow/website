@@ -7,15 +7,13 @@
     <div class="container-fluid bg-white">
         <div class="container">
             <%- include('about/us.ejs')%>
-            <div class="slide-content">
-                <%# HACK: very poor and bad code below : do a proper script %>
-                <div id="people-exit" onclick="	document.getElementById('people-exit').className='';
-                                                                        document.getElementsByClassName('vip opened')[0].className='vip';">
-                </div>
+            <hr>
+            <div class="row">
                 <% for(var i=0; i<ListePeople.length; i++) {%>
-                    <div class="vip" onclick="this.classList.add('opened');
-                                                                        getElementById('people-exit').classList.add('opened')">
-                        <%- include('people/' + ListePeople[i])%>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card">
+                            <%- include('people/' + ListePeople[i])%>
+                        </div>
                     </div>
                 <% } %>
             </div>
