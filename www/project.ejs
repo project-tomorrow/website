@@ -6,34 +6,44 @@
 	<% include partials/navBar.ejs %>
 
 	<div class="container-fluid bg-white">
-    <div class="container">
-        <div class="row">
-            <h1> Les Projets</h1>
-            <p class="text-justify">
-                Grâce à leur encadrement par des professionnels travaillant en entreprise
-                (ingénieurs, chefs de projet, entrepreneurs, etc.), les projets ProTo
-                incarnent un bon moyen pour les étudiants de se sensibiliser aux
-                problématiques réelles et concrètes de leur futur emploi. En plus d'offrir
-                aux étudiants <b>une expérience pratique de la gestion de l'innovation</b>,
-                les projets étant réalisés dans le cadre de partenariat inter-écoles, ProTo
-                leur permet d'expérimenter <b>le travail en équipe pluridisciplinaires</b>.
-                Basés sur des problématiques concrètes soumises par des partenaires industriels,
-                les projets ProTo sont également une excellente façon pour les entreprises
-                de <b>développer des solutions innovantes et détecter de futurs collaborateurs.</b>
-            </p>
-        </div>
-        <div class="BigButt"><a href="/workflow">
-          <h1>Le Workflow</h1>
-          <p>Notre méthodologie de fonctionnement.</p>
-          <img src="/workflow.png"/></a>
-        </div>
-        <div class="BigButt"><a href="/hifive">
-          <h1>Les Projets</h1>
-          <p>Présentation des projets ProTo.</p>
-          <img src="/ProToLogo.png"/></a>
+        <div class="container">
+            <div class="row">
+                <h1> Les Projets</h1>
+                <p class="text-justify">
+                    Grâce à leur encadrement par des professionnels travaillant en entreprise
+                    (ingénieurs, chefs de projet, entrepreneurs, etc.), les projets ProTo
+                    incarnent un bon moyen pour les étudiants de se sensibiliser aux
+                    problématiques réelles et concrètes de leur futur emploi. En plus d'offrir
+                    aux étudiants <b>une expérience pratique de la gestion de l'innovation</b>,
+                    les projets étant réalisés dans le cadre de partenariat inter-écoles, ProTo
+                    leur permet d'expérimenter <b>le travail en équipe pluridisciplinaires</b>.
+                    Basés sur des problématiques concrètes soumises par des partenaires industriels,
+                    les projets ProTo sont également une excellente façon pour les entreprises
+                    de <b>développer des solutions innovantes et détecter de futurs collaborateurs.</b>
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <a href="/workflow" class="card-body">
+                            <h1 class="card-title">Le Workflow</h1>
+                            <p class="card-text">Notre méthodologie de fonctionnement.</p>
+                            <img src="/workflow.png" class="card-img-bottom"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card" >
+                        <a href="/hifive" class="card-body">
+                            <h1 class="card-title">Les Projets</h1>
+                            <p class="card-text">Présentation des projets ProTo.</p>
+                            <img src="/ProToLogo.png" class="card-img-bottom"/></a>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-  </div>
 	<% include partials/footer.ejs %>
 </body>
 <% include script/fadeList.js %>

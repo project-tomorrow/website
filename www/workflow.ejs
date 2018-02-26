@@ -4,30 +4,37 @@
 	</head>
 <body>
 	<% include partials/navBar.ejs %>
-	<section>
-    <div id="scroll-bar-diapo">
-      <!--div id="angle-bar-diapo"></div>-->
-      <!--div id="nav-bar-diapo"-->
-        <a  class="round selected" onclick="GoToSlide(<%= 0 %>)">
-          <img src="/diapo-nav/sel-1.png"></img>
-        </a>
-        <%for(var i=1; i<(LogoDiapo.length/2); i++) {%>
-         <a  class="round" onclick="GoToSlide(<%= i %>)">
-           <img src="/diapo-nav/<%=LogoDiapo[i]%>"></img>
-         </a>
-        <% } %>
-      <!--/div>-->
+    <div class="container-fluid bg-white">
+        <div class="container"  style="height:100vh;">
+            <div id="workflowCarouselIndicators" class="carousel slide" data-wrap="false">
+                <ol class="carousel-indicators">
+                    <li data-target="#workflowCarouselIndicators" data-slide-to="0" class="active"></li>
+                    <% for(var i=1; i<ListDiapo.length; i++) {%>
+                        <li data-target="#workflowCarouselIndicators" data-slide-to="<%= i %>"></li>
+                    <% } %>
+                </ol>
+                <div class="carousel-inner">
+                    <div id="diapo<%= i %>" class="carousel-item active">
+                        <%- include('workflow/' + ListDiapo[0])%>
+                    </div>
+                    <% for(var i=1; i<ListDiapo.length; i++) {%>
+                      <div id="diapo<%= i %>" class="carousel-item">
+                        <%- include('workflow/' + ListDiapo[i])%>
+                      </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+            <a class="carousel-control-prev" href="#workflowCarouselIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#workflowCarouselIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
     </div>
-
-    <div id="diaporama" onscroll="detectFocused()"><!--onmouseover="SlideStop()"
-                                         onfocussout="SlideStart()">-->
-    <% for(var i=0; i<ListDiapo.length; i++) {%>
-      <div id="diapo<%= i %>" class="diapo">
-        <%- include('workflow/' + ListDiapo[i])%>
-      </div>
-    <% } %>
-    </div>
-  </section>
 	<% include partials/footer.ejs %>
 </body>
 <% include script/slide.js %>
