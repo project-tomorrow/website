@@ -45,8 +45,18 @@ footer {
     line-height: @FOOTER_HEIGHT;
 }
 
-body {
+.card-item::before {
+    border-top: 7px solid #e25b49;
+    width: 100%;
+    content: '';
+    display: block;
+}
 
+.card-item::after {
+    border-top: 7px solid #e25b49;
+    width: 100%;
+    content: '';
+    display: block;
 }
 
 /*nav {
@@ -83,6 +93,7 @@ h1 {
 }
 h2 {
   font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
 }
 
 /** General purpose Position element **/
