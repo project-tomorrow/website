@@ -1,5 +1,5 @@
 <%# Horizontale nav bar %>
-<nav id="HorzTopNav" class="navbar navbar-toggleable-md navbar-expand-lg sticky-top navbar-light bg-light">
+<nav id="HorzTopNav" class="navbar navbar-toggleable-md navbar-expand-lg sticky-top navbar-light">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,9 +9,9 @@
     <% } %>  ">
   </div></a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul id=".webSiteNav" class="navbar-nav">
+    <ul class="navbar-nav">
       <% for(var i=1; i<TitleNavBar.length; i++) {%>
-        <li id=".<%- ColorNavBar[i]%>Nav" onclick="this.className='active'" class="nav-item
+        <li id="<%- ColorNavBar[i]%>Nav" onclick="this.className='active'" class="nav-item
           <% if(Title== TitleNavBar[i]){ %>
                 active
           <% } %>  ">

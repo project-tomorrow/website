@@ -47,6 +47,30 @@ footer {
     line-height: @FOOTER_HEIGHT;
 }
 
+p > a {
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    color: @BLUE;
+    &::after{
+        transition: 0.4s;
+        transition-property: all;
+        content: '';
+        left: 0;
+        position: absolute;
+        bottom: -.2em;
+        width: 0;
+        border-bottom: .3em solid @BLUE;
+        vertical-align: bottom;
+    }
+    &:hover {
+        color: @BLUE;
+        text-decoration: none;
+        &:after{
+            width: 100%;
+        }
+    }
+}
 .card-item::before {
     border-top: 7px solid #e25b49;
     width: 100%;
@@ -63,8 +87,26 @@ footer {
 
 #HorzTopNav {
     padding: 0 1em 0 1em;
+    background-color : white;
     .navbar-brand {
         padding: 0;
+    }
+    li {
+    		position: relative;
+        &::after {
+            border-top: 0px solid @GREY;
+            content: '';
+            left: 0;
+            position: absolute;
+            top: 0;
+            transition: 0.2s;
+            width: 100%;
+        }
+    }
+    li.selected {
+        &:after {
+            transition: none;
+        }
     }
 }
 .card-item {
@@ -106,7 +148,7 @@ h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
 }
-é
+
 /** Custom element style **/
 #Welcome {
 	background-color: transparent;
@@ -211,13 +253,13 @@ a {
 			transition: none;
 		}
 	}
-}
+}*/
 #redNav {
 	&:hover:after {
 		border-top: 7px solid @RED;
 		vertical-align: bottom;
 	}
-	&:active {
+	&.active {
 		background-color: @RED;
 		color: white;
 	}
@@ -231,7 +273,7 @@ a {
 		border-top: 7px solid @YELLOW;
 		vertical-align: bottom;
 	}
-	&:active {
+	&.active {
 		background-color: @YELLOW;
 		color: white;
 	}
@@ -245,7 +287,7 @@ a {
 		border-top: 7px solid @ORANGE;
 		vertical-align: bottom;
 	}
-	&:active {
+	&.active {
 		background-color: @ORANGE;
 		color: white;
 	}
@@ -259,7 +301,7 @@ a {
 		border-top: 7px solid @BLUE;
 		vertical-align: bottom;
 	}
-	&:active {
+	&.active {
 		background-color: @BLUE;
 		color: white;
 	}
@@ -273,7 +315,7 @@ a {
 		border-top: 7px solid @GREEN;
 		vertical-align: bottom;
 	}
-	&:active {
+	&.active {
 		background-color: @GREEN;
 		color: white;
 	}
@@ -281,7 +323,7 @@ a {
 #greenNav.selected {
 	background-color: @GREEN;
 	color: white;
-}
+}/*
 #IconShortcut {
 	li {
 		a {
